@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$primary-color: #ffc107;
+$vertical-margin-px: 5px;
+$vertical-padding-px: 5px;
+$horizontal-padding-px: 5px;
+$default-border-radius: 4px;
+$footer-height: 60px;
+$list-title-text-colour: #000;
+$list-heading-height: 43px;
+$list-subtitle-text-colour: #888;
+$heading-fonts: 'Roboto', sans-serif;
+$sub-heading-fonts: 'Roboto', sans-serif;
+$paragraph-fonts: 'Roboto', sans-serif;
+
+#content {
+  height: calc(100% - #{$footer-height});
+  overflow: scroll;
+}
+
+.journal-entry-form-inner {
+  margin-top: $vertical-margin-px;
+  margin-bottom: $vertical-margin-px;
+  border-radius: $default-border-radius;
+  border: 1px solid $primary-color;
+}
+
+.journal-entries {
+
+  .journal-entry {
+    margin-top: $vertical-margin-px;
+    margin-bottom: $vertical-margin-px;
+    border-radius: $default-border-radius;
+    border: 1px solid $primary-color;
+
+    .entry-header {
+      background: $primary-color;
+      padding-top: $vertical-padding-px;
+      padding-bottom: $vertical-padding-px;
+      padding-left: $horizontal-padding-px;
+      padding-right: $horizontal-padding-px;
+      height: $list-heading-height;
+
+      .entry-title {
+        display: inline;
+        margin: 0px;
+        color: $list-title-text-colour;
+        font-family: $heading-fonts;
+      }
+
+      .entry-subject {
+        color: $list-subtitle-text-colour;
+        line-height: $list-heading-height - $vertical-padding-px * 2;
+        font-family: $sub-heading-fonts;
+        font-size: 20px;
+      }
+
+      .entry-created {
+        color: $list-subtitle-text-colour;
+        line-height: $list-heading-height - $vertical-padding-px * 2;
+        font-family: $sub-heading-fonts;
+        font-size: 20px;
+      }
+
+    }
+
+    .entry-content {
+      padding-top: $vertical-padding-px;
+      padding-bottom: $vertical-padding-px;
+      padding-left: $horizontal-padding-px;
+      padding-right: $horizontal-padding-px;
+    }
+  }
+
+  .entry-images {
+    .entry-image img{
+      width: 100%;
+    }
+  }
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding-top: $vertical-padding-px;
+  padding-bottom: $vertical-padding-px;
+  padding-left: $horizontal-padding-px;
+  padding-right: $horizontal-padding-px;
+  height: $footer-height;
+  border-top: 1px solid $primary-color;
+
+  .app-title {
+    margin: 0px;
+    height: $footer-height - $vertical-padding-px * 2;
+    line-height: $footer-height;
+  }
+
+  .nav-icon {
+    width: 50px;
+
+    .nav-icon-background {
+      fill: #fff;
+    }
+  }
+}
+
+.row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
