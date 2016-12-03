@@ -5,4 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: 'app/template/app.template.html'
 })
 export class AppComponent {
+  title: string = "Household";
 }

@@ -21,8 +21,23 @@ $paragraph-fonts: 'Roboto', sans-serif;
 .journal-entry-form-inner {
   margin-top: $vertical-margin-px;
   margin-bottom: $vertical-margin-px;
+  padding-top: $vertical-padding-px;
+  padding-bottom: $vertical-padding-px;
   border-radius: $default-border-radius;
   border: 1px solid $primary-color;
+
+  .row {
+    margin-top: $vertical-margin-px;
+    margin-bottom: $vertical-margin-px;
+  }
+
+  .entry-textarea {
+    width: 100%;
+  }
+
+  .entry-submit {
+    float: right;
+  }
 }
 
 .journal-entries {
@@ -60,6 +75,7 @@ $paragraph-fonts: 'Roboto', sans-serif;
         line-height: $list-heading-height - $vertical-padding-px * 2;
         font-family: $sub-heading-fonts;
         font-size: 20px;
+        float: right;
       }
 
     }

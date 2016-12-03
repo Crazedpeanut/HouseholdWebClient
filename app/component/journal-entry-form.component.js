@@ -8,18 +8,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
+var journal_entry_1 = require("../model/journal-entry");
 var JournalEntryFormComponent = (function () {
     function JournalEntryFormComponent() {
+        this.journalEntry = new journal_entry_1.JournalEntry();
     }
+    JournalEntryFormComponent.prototype.onSubmit = function () {
+        console.log("Submit!");
+    };
+    JournalEntryFormComponent.prototype.resetForm = function () {
+        this.journalEntry = new journal_entry_1.JournalEntry();
+    };
+    JournalEntryFormComponent = __decorate([
+        core_1.Component({
+            selector: 'journal-entry-form',
+            templateUrl: 'app/template/journal-entry-form.template.html'
+        }), 
+        __metadata('design:paramtypes', [])
+    ], JournalEntryFormComponent);
     return JournalEntryFormComponent;
 }());
-JournalEntryFormComponent = __decorate([
-    core_1.Component({
-        selector: 'journal-entry-form',
-        templateUrl: 'app/template/journal-entry-form.template.html'
-    }),
-    __metadata("design:paramtypes", [])
-], JournalEntryFormComponent);
 exports.JournalEntryFormComponent = JournalEntryFormComponent;
 //# sourceMappingURL=journal-entry-form.component.js.map

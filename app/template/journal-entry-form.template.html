@@ -1,12 +1,23 @@
 <div class="journal-entry-form-inner">
-  <div class="row">
-    <div class="col-lg-8">
-      <input type="text" placeholder="Enter a title for your journal entry"/>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-8">
-      <textarea></textarea>
-    </div>
-  </div>
+    <form (submit)="onSubmit();resetForm()">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="title" [(ngModel)]="journalEntry.title" placeholder="Entry title" required/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-11 col-md-11">
+                <div class="form-group">
+                    <textarea class="entry-textarea form-control" name="content" placeholder="Write your journal entry" required></textarea>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-1">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary entry-submit" >Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>

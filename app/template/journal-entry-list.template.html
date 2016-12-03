@@ -1,0 +1,27 @@
+<div class="journal-entries">
+  <div *ngFor="let entry of journalEntries" class="journal-entry row">
+    <div class="entry-header col-lg-12">
+      <div class="row">
+          <div class="col-lg-2 col-md-3">
+            <h2 class="entry-title">{{ entry.title }}</h2>
+          </div>
+          <div class="col-lg-offset-7 col-md-offset-5 col-lg-3 col-md-4">
+            <p class="entry-created">{{ entry.createdDateTime | date }}</p>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="entry-content">
+          {{ entry.content }}
+        </p>
+      </div>
+    </div>
+    <div class="entry-images row">
+      <div *ngFor="let image of entry.images" class="col-lg-2 col-md-2 entry-image">
+        <img src="{{ image.thumbnailUrl }}"/>
+      </div>
+    </div>
+
+  </div>
+</div>

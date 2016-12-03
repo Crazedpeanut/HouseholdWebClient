@@ -8,19 +8,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var MOCK_SERVICES_1 = require("./MOCK_SERVICES");
+var core_1 = require('@angular/core');
+var MOCK_SERVICES_1 = require('./MOCK_SERVICES');
 var JournalService = (function () {
     function JournalService() {
     }
-    JournalService.prototype.getJournal = function () {
-        return MOCK_SERVICES_1.ENTRIES;
+    JournalService.prototype.getJournalById = function (id) {
+        console.log("Getting journal with id: " + id);
+        return Promise.resolve(MOCK_SERVICES_1.MockJournal);
     };
+    JournalService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [])
+    ], JournalService);
     return JournalService;
 }());
-JournalService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [])
-], JournalService);
 exports.JournalService = JournalService;
 //# sourceMappingURL=journal.service.js.map

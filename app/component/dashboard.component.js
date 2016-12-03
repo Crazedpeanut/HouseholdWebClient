@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var NavComponent = (function () {
-    function NavComponent() {
-        this.title = "Household";
+var DashboardComponent = (function () {
+    function DashboardComponent() {
     }
-    NavComponent = __decorate([
+    DashboardComponent = __decorate([
         core_1.Component({
-            selector: 'nav',
-            templateUrl: 'app/template/nav.template.html'
+            selector: 'dashboard',
+            templateUrl: 'app/template/dashboard.template.html',
+            providers: []
         }), 
         __metadata('design:paramtypes', [])
-    ], NavComponent);
-    return NavComponent;
+    ], DashboardComponent);
+    return DashboardComponent;
 }());
-exports.NavComponent = NavComponent;
-//# sourceMappingURL=nav.component.js.map
+exports.DashboardComponent = DashboardComponent;
+//# sourceMappingURL=dashboard.component.js.map

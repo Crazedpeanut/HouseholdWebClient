@@ -9,18 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var NavComponent = (function () {
-    function NavComponent() {
-        this.title = "Household";
+var JournalEntryListComponent = (function () {
+    function JournalEntryListComponent() {
     }
-    NavComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array)
+    ], JournalEntryListComponent.prototype, "journalEntries", void 0);
+    JournalEntryListComponent = __decorate([
         core_1.Component({
-            selector: 'nav',
-            templateUrl: 'app/template/nav.template.html'
+            selector: 'journal-entry-list',
+            templateUrl: 'app/template/journal-entry-list.template.html',
+            providers: []
         }), 
         __metadata('design:paramtypes', [])
-    ], NavComponent);
-    return NavComponent;
+    ], JournalEntryListComponent);
+    return JournalEntryListComponent;
 }());
-exports.NavComponent = NavComponent;
-//# sourceMappingURL=nav.component.js.map
+exports.JournalEntryListComponent = JournalEntryListComponent;
+//# sourceMappingURL=journal-entry-list.component.js.map
