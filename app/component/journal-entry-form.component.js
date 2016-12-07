@@ -20,6 +20,9 @@ var JournalEntryFormComponent = (function () {
     JournalEntryFormComponent.prototype.resetForm = function () {
         this.journalEntry = new journal_entry_1.JournalEntry();
     };
+    JournalEntryFormComponent.prototype.openImageUploadModal = function () {
+        console.log("Opening modal");
+    };
     JournalEntryFormComponent = __decorate([
         core_1.Component({
             selector: 'journal-entry-form',

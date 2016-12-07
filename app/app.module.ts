@@ -9,6 +9,7 @@ import { JournalEntryFormComponent } from './component/journal-entry-form.compon
 import { JournalEntryListComponent } from './component/journal-entry-list.component';
 import { DashboardComponent } from './component/dashboard.component';
 import {FormsModule} from "@angular/forms";
+import {ImageUploadComponent} from "./component/image-upload.component";
 
 @NgModule({
   imports:      [
@@ -16,7 +17,15 @@ import {FormsModule} from "@angular/forms";
       BrowserModule,
       AppRoutingModule
   ],
-  declarations: [ AppComponent, JournalComponent, NavComponent, JournalEntryFormComponent, JournalEntryListComponent, DashboardComponent ],
+  declarations: [
+      AppComponent,
+      JournalComponent,
+      NavComponent,
+      JournalEntryFormComponent,
+      JournalEntryListComponent,
+      DashboardComponent,
+      ImageUploadComponent
+  ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

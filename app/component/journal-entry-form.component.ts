@@ -15,4 +15,8 @@ export class JournalEntryFormComponent{
   resetForm(): void {
       this.journalEntry = new JournalEntry();
   }
+
+  openImageUploadModal(): void {
+    console.log("Opening modal");
+  }
 }

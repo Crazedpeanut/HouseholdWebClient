@@ -18,6 +18,7 @@ var journal_entry_form_component_1 = require('./component/journal-entry-form.com
 var journal_entry_list_component_1 = require('./component/journal-entry-list.component');
 var dashboard_component_1 = require('./component/dashboard.component');
 var forms_1 = require("@angular/forms");
+var image_upload_component_1 = require("./component/image-upload.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,7 +29,15 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 app_routing_module_1.AppRoutingModule
             ],
-            declarations: [app_component_1.AppComponent, journal_component_1.JournalComponent, nav_component_1.NavComponent, journal_entry_form_component_1.JournalEntryFormComponent, journal_entry_list_component_1.JournalEntryListComponent, dashboard_component_1.DashboardComponent],
+            declarations: [
+                app_component_1.AppComponent,
+                journal_component_1.JournalComponent,
+                nav_component_1.NavComponent,
+                journal_entry_form_component_1.JournalEntryFormComponent,
+                journal_entry_list_component_1.JournalEntryListComponent,
+                dashboard_component_1.DashboardComponent,
+                image_upload_component_1.ImageUploadComponent
+            ],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

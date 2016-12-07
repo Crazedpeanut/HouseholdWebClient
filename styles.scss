@@ -1,21 +1,44 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+$primary-color-dark: #ffa005;
 $primary-color: #ffc107;
+$primary-color-r: 255;
+$primary-color-g: 193;
+$primary-color-b: 7;
+
+$secondary-color: #888;
 $vertical-margin-px: 5px;
 $vertical-padding-px: 5px;
 $horizontal-padding-px: 5px;
 $default-border-radius: 4px;
-$footer-height: 60px;
 $list-title-text-colour: #000;
 $list-heading-height: 43px;
-$list-subtitle-text-colour: #888;
 $heading-fonts: 'Roboto', sans-serif;
 $sub-heading-fonts: 'Roboto', sans-serif;
 $paragraph-fonts: 'Roboto', sans-serif;
 
-#content {
-  height: calc(100% - #{$footer-height});
-  overflow: scroll;
+.heading {
+  color: $primary-color;
+  font-family: $heading-fonts;
+}
+
+form {
+  .form-control:focus {
+    border-color: $primary-color;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($primary-color-r, $primary-color-g, $primary-color-b, 0.6);
+  }
+
+  .form-icon {
+    height: 0.8em;
+  }
+
+  a::after {
+    text-decoration: none;
+  }
+}
+.sub-heading {
+  color: $secondary-color;
+  font-family: $sub-heading-fonts;
 }
 
 .journal-entry-form-inner {
@@ -23,8 +46,6 @@ $paragraph-fonts: 'Roboto', sans-serif;
   margin-bottom: $vertical-margin-px;
   padding-top: $vertical-padding-px;
   padding-bottom: $vertical-padding-px;
-  border-radius: $default-border-radius;
-  border: 1px solid $primary-color;
 
   .row {
     margin-top: $vertical-margin-px;
@@ -45,46 +66,14 @@ $paragraph-fonts: 'Roboto', sans-serif;
   .journal-entry {
     margin-top: $vertical-margin-px;
     margin-bottom: $vertical-margin-px;
-    border-radius: $default-border-radius;
-    border: 1px solid $primary-color;
 
-    .entry-header {
-      background: $primary-color;
-      padding-top: $vertical-padding-px;
-      padding-bottom: $vertical-padding-px;
-      padding-left: $horizontal-padding-px;
-      padding-right: $horizontal-padding-px;
-      height: $list-heading-height;
-
-      .entry-title {
-        display: inline;
-        margin: 0px;
-        color: $list-title-text-colour;
-        font-family: $heading-fonts;
-      }
-
-      .entry-subject {
-        color: $list-subtitle-text-colour;
-        line-height: $list-heading-height - $vertical-padding-px * 2;
-        font-family: $sub-heading-fonts;
-        font-size: 20px;
-      }
-
-      .entry-created {
-        color: $list-subtitle-text-colour;
-        line-height: $list-heading-height - $vertical-padding-px * 2;
-        font-family: $sub-heading-fonts;
-        font-size: 20px;
-        float: right;
-      }
-
+    .entry-title {
+      margin: 0;
     }
 
-    .entry-content {
-      padding-top: $vertical-padding-px;
-      padding-bottom: $vertical-padding-px;
-      padding-left: $horizontal-padding-px;
-      padding-right: $horizontal-padding-px;
+    .entry-created {
+      line-height: $list-heading-height - $vertical-padding-px * 2;
+      font-size: 20px;
     }
   }
 
@@ -95,33 +84,15 @@ $paragraph-fonts: 'Roboto', sans-serif;
   }
 }
 
-footer {
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  padding-top: $vertical-padding-px;
-  padding-bottom: $vertical-padding-px;
-  padding-left: $horizontal-padding-px;
-  padding-right: $horizontal-padding-px;
-  height: $footer-height;
-  border-top: 1px solid $primary-color;
 
-  .app-title {
-    margin: 0px;
-    height: $footer-height - $vertical-padding-px * 2;
-    line-height: $footer-height;
+nav.navbar-household {
+  a {
+    color: $primary-color;
   }
 
-  .nav-icon {
-    width: 50px;
-
-    .nav-icon-background {
-      fill: #fff;
+  .navbar-toggle {
+    span {
+      background-color: $primary-color;
     }
   }
-}
-
-.row {
-  margin-left: 0px !important;
-  margin-right: 0px !important;
 }

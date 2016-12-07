@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'nav',
+  selector: 'household-nav',
   templateUrl: 'app/template/nav.template.html'
 })
 export class NavComponent  {

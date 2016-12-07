@@ -15,7 +15,7 @@ var NavComponent = (function () {
     }
     NavComponent = __decorate([
         core_1.Component({
-            selector: 'nav',
+            selector: 'household-nav',
             templateUrl: 'app/template/nav.template.html'
         }), 
         __metadata('design:paramtypes', [])
