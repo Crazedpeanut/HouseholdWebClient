@@ -1,4 +1,4 @@
-import { JournalEntryImage } from './journal-entry-image';
+import { JournalImage } from './journal-image';
 
 export class JournalEntry {
 
@@ -6,5 +6,5 @@ export class JournalEntry {
               public title: string = null,
               public content: string = null,
               public createdDateTime: string = null,
-              public images: JournalEntryImage[] = null){ }
+              public images: JournalImage[] = null){ }
 }

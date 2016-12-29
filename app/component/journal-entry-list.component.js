@@ -8,23 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var JournalEntryListComponent = (function () {
     function JournalEntryListComponent() {
     }
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Array)
-    ], JournalEntryListComponent.prototype, "journalEntries", void 0);
-    JournalEntryListComponent = __decorate([
-        core_1.Component({
-            selector: 'journal-entry-list',
-            templateUrl: 'app/template/journal-entry-list.template.html',
-            providers: []
-        }), 
-        __metadata('design:paramtypes', [])
-    ], JournalEntryListComponent);
     return JournalEntryListComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array)
+], JournalEntryListComponent.prototype, "journalEntries", void 0);
+JournalEntryListComponent = __decorate([
+    core_1.Component({
+        selector: 'journal-entry-list',
+        templateUrl: 'app/template/journal-entry-list.template.html',
+        providers: []
+    }),
+    __metadata("design:paramtypes", [])
+], JournalEntryListComponent);
 exports.JournalEntryListComponent = JournalEntryListComponent;
 //# sourceMappingURL=journal-entry-list.component.js.map

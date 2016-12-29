@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-require('rxjs/add/operator/switchMap');
-var journal_service_1 = require('../service/journal.service');
+var core_1 = require("@angular/core");
+require("rxjs/add/operator/switchMap");
+var journal_service_1 = require("../service/journal.service");
 var router_1 = require("@angular/router");
 var JournalComponent = (function () {
     function JournalComponent(journalService, route) {
@@ -23,15 +23,18 @@ var JournalComponent = (function () {
             .switchMap(function (params) { return _this.journalService.getJournalById(+params["id"]); })
             .subscribe(function (jrnl) { return _this.journal = jrnl; });
     };
-    JournalComponent = __decorate([
-        core_1.Component({
-            selector: 'journal',
-            templateUrl: 'app/template/journal.template.html',
-            providers: [journal_service_1.JournalService]
-        }), 
-        __metadata('design:paramtypes', [journal_service_1.JournalService, router_1.ActivatedRoute])
-    ], JournalComponent);
+    JournalComponent.prototype.onJournalEntrySubmitted = function (journalEntry) {
+        this.journal.journalEntries.push(journalEntry);
+    };
     return JournalComponent;
 }());
+JournalComponent = __decorate([
+    core_1.Component({
+        selector: 'journal',
+        templateUrl: 'app/template/journal.template.html',
+        providers: [journal_service_1.JournalService]
+    }),
+    __metadata("design:paramtypes", [journal_service_1.JournalService, router_1.ActivatedRoute])
+], JournalComponent);
 exports.JournalComponent = JournalComponent;
 //# sourceMappingURL=journal.component.js.map

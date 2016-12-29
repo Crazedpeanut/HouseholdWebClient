@@ -10,6 +10,9 @@ form .form-control:focus {
 form .form-icon {
   height: 0.8em; }
 
+form a::after {
+  text-decoration: none; }
+
 .sub-heading {
   color: #888;
   font-family: "Roboto", sans-serif; }
@@ -26,6 +29,8 @@ form .form-icon {
     width: 100%; }
   .journal-entry-form-inner .entry-submit {
     float: right; }
+  .journal-entry-form-inner .image-uploads input {
+    display: none; }
 
 .journal-entries .journal-entry {
   margin-top: 5px;

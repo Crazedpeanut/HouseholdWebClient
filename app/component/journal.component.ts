@@ -5,6 +5,7 @@ import 'rxjs/add/operator/switchMap';
 import { JournalService } from '../service/journal.service';
 import {Journal} from "../model/journal";
 import {ActivatedRoute, Params} from "@angular/router";
+import {JournalEntry} from "../model/journal-entry";
 
 @Component({
   selector: 'journal',
@@ -15,7 +16,7 @@ export class JournalComponent implements OnInit{
 
   journal: Journal;
 
-  constructor(private journalService: JournalService, private route: ActivatedRoute,) {
+  constructor(private journalService: JournalService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -23,5 +24,9 @@ export class JournalComponent implements OnInit{
       this.route.params
           .switchMap((params: Params) => this.journalService.getJournalById(+params["id"]))
           .subscribe(jrnl => this.journal = jrnl);
+  }
+
+  onJournalEntrySubmitted(journalEntry: JournalEntry): void {
+    this.journal.journalEntries.push(journalEntry);
   }
 }

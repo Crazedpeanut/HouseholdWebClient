@@ -1,4 +1,4 @@
-export class JournalEntryImage {
+export class JournalImage {
 
   id: number;
   thumbnailUrl: string;

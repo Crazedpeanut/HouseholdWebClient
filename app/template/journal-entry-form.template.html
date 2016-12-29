@@ -1,28 +1,21 @@
 <div class="journal-entry-form-inner">
     <form (submit)="onSubmit();resetForm()">
 
-        <div id="journal-entry-image-upload" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Upload your images</h4>
-                    </div>
-                    <div class="modal-body">
-                        <image-upload></image-upload>
-                    </div>
-                </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="title" [(ngModel)]="model.title" placeholder="Entry title" required/>
+        </div>
+        <div class="form-group">
+            <textarea class="entry-textarea form-control" name="content" [(ngModel)]="model.description" placeholder="Write your journal entry" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label class="image-uploads">
+                <a><span><img class="form-icon" src="images/glyphicons-12-camera@3x.png"/></span> Upload Images</a>
+                <input type="file" accept="image/*" name="images" class="form-control" (change)="onImageSelectChange($event)" value="Add Photos" multiple/>
+            </label>
+            <div class="selected-images" *ngFor="let image of model.images">
+                {{ image }}
             </div>
-        </div>
-
-        <div class="form-group">
-            <input type="text" class="form-control" name="title" [(ngModel)]="journalEntry.title" placeholder="Entry title" required/>
-        </div>
-        <div class="form-group">
-            <textarea class="entry-textarea form-control" name="content" placeholder="Write your journal entry" required></textarea>
-        </div>
-
-        <div class="form-group">
-            <a data-toggle="modal" data-target="#journal-entry-image-upload"><span><img class="form-icon" src="images/glyphicons-12-camera@3x.png"/> Upload Photos</span></a>
         </div>
 
         <div class="form-group">

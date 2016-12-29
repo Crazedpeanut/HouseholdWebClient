@@ -59,6 +59,12 @@ form {
   .entry-submit {
     float: right;
   }
+
+  .image-uploads {
+    input {
+      display: none
+    }
+  }
 }
 
 .journal-entries {
