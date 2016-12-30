@@ -3,6 +3,8 @@ import {JournalEntryForm} from "../model/journal-entry-form";
 import {JournalService} from "../service/journal.service";
 import {JournalEntryFormToJournalEntry} from "../mappers/journal-entry-form-to-journal-entry";
 import {JournalEntry} from "../model/journal-entry";
+import {JournalImage} from "../model/journal-image";
+import {EntryFormImage} from "../model/entry-form-image";
 
 @Component({
   selector: 'journal-entry-form',
@@ -23,10 +25,10 @@ export class JournalEntryFormComponent{
     console.log("Submit!");
     let mapper = new JournalEntryFormToJournalEntry();
     let journalEntry = mapper.map(this.model);
-    let imagePromises = [];
+    let imagePromises: [Promise<JournalImage>];
 
-    for (let i = 0; i < this.model.images.length; i++) {
-      let promise = this.journalService.createJournalImage(this.model.images[i]);
+    for (let i = 0; i < this.model.entryFormImages.length; i++) {
+      let promise = this.journalService.createJournalImage(this.model.entryFormImages[i].file);
       promise.then(journalImage => console.log("Image uploaded: " + journalImage.imageUrl));
       imagePromises.push(promise);
     }
@@ -48,21 +50,36 @@ export class JournalEntryFormComponent{
       this.model = new JournalEntryForm();
   }
 
-  onImageSelectChange(event : Event): void {
-    let files = null;
-    if(event.target){
+  onImageSelectChange(event: any): void {
+    let files: File[]  = null;
+    if(event.target) {
 
       files = event.target.files;
 
-      for(var i = 0; i < files.length; i++ ) {
-        if(files[i].type.match(this.imageRegexPattern)){
-          this.model.images.push(files[i]);
-        }
-        else{
+      for(let i = 0; i < files.length; i++ ) {
+        if(!files[i].type.match(this.imageRegexPattern)) {
           console.log("Not an image!");
+          return;
         }
+
+        this.createThumbnail(files[i])
+            .then(thumbnailUrl => {
+              let entryFormImage = new EntryFormImage(files[i], thumbnailUrl.toString());
+              this.model.entryFormImages.push(entryFormImage);
+            });
       }
     }
+  }
 
+  createThumbnail(file: File) {
+    let fileReader = new FileReader();
+
+    return new Promise((resolve, reject) => {
+      fileReader.onload = function(e:any){
+        resolve(e.target.result);
+      };
+
+      fileReader.readAsDataURL(file);
+    });
   }
 }

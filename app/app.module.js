@@ -21,6 +21,8 @@ var dashboard_component_1 = require("./component/dashboard.component");
 var forms_1 = require("@angular/forms");
 var household_modal_component_1 = require("./component/household-modal.component");
 var image_selection_component_1 = require("./component/image-selection.component");
+var journal_entry_form_images_component_1 = require("./component/journal-entry-form-images.component");
+var journal_entry_form_image_component_1 = require("./component/journal-entry-form-image.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -42,7 +44,9 @@ AppModule = __decorate([
             journal_entry_list_component_1.JournalEntryListComponent,
             dashboard_component_1.DashboardComponent,
             household_modal_component_1.HouseholdModalComponent,
-            image_selection_component_1.ImageSelectionContent
+            image_selection_component_1.ImageSelectionContent,
+            journal_entry_form_images_component_1.JournalEntryFormImagesComponent,
+            journal_entry_form_image_component_1.JournalEntryFormImageComponent
         ],
         entryComponents: [
             image_selection_component_1.ImageSelectionContent

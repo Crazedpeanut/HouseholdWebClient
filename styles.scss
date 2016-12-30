@@ -16,6 +16,7 @@ $list-heading-height: 43px;
 $heading-fonts: 'Roboto', sans-serif;
 $sub-heading-fonts: 'Roboto', sans-serif;
 $paragraph-fonts: 'Roboto', sans-serif;
+$translucent-background: rgba(0, 0, 0, 0.4);
 
 .heading {
   color: $primary-color;
@@ -65,6 +66,42 @@ form {
       display: none
     }
   }
+
+  journal-entry-form-images {
+
+    .selected-images{
+
+      .row {
+        .selected-image-container {
+          overflow: hidden;
+          height: 100px;
+          width: 100px;
+          background: lightgray;
+          position: relative;
+
+          .selected-image {
+            width: 100%;
+          }
+
+          .delete-overlay {
+
+            width: 100%;
+            height: 100%;
+            background: $translucent-background;
+            position: absolute;
+
+            img {
+              display: inline-block;
+              margin-left: auto;
+              margin-right: auto;
+              vertical-align: middle;
+
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .journal-entries {
@@ -101,4 +138,8 @@ nav.navbar-household {
       background-color: $primary-color;
     }
   }
+}
+
+.invisible {
+  display: none;
 }

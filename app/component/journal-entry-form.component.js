@@ -12,6 +12,7 @@ var core_1 = require("@angular/core");
 var journal_entry_form_1 = require("../model/journal-entry-form");
 var journal_service_1 = require("../service/journal.service");
 var journal_entry_form_to_journal_entry_1 = require("../mappers/journal-entry-form-to-journal-entry");
+var entry_form_image_1 = require("../model/entry-form-image");
 var JournalEntryFormComponent = (function () {
     function JournalEntryFormComponent(journalService) {
         this.journalService = journalService;
@@ -24,9 +25,9 @@ var JournalEntryFormComponent = (function () {
         console.log("Submit!");
         var mapper = new journal_entry_form_to_journal_entry_1.JournalEntryFormToJournalEntry();
         var journalEntry = mapper.map(this.model);
-        var imagePromises = [];
-        for (var i = 0; i < this.model.images.length; i++) {
-            var promise = this.journalService.createJournalImage(this.model.images[i]);
+        var imagePromises;
+        for (var i = 0; i < this.model.entryFormImages.length; i++) {
+            var promise = this.journalService.createJournalImage(this.model.entryFormImages[i].file);
             promise.then(function (journalImage) { return console.log("Image uploaded: " + journalImage.imageUrl); });
             imagePromises.push(promise);
         }
@@ -44,18 +45,37 @@ var JournalEntryFormComponent = (function () {
         this.model = new journal_entry_form_1.JournalEntryForm();
     };
     JournalEntryFormComponent.prototype.onImageSelectChange = function (event) {
+        var _this = this;
         var files = null;
         if (event.target) {
             files = event.target.files;
-            for (var i = 0; i < files.length; i++) {
-                if (files[i].type.match(this.imageRegexPattern)) {
-                    this.model.images.push(files[i]);
-                }
-                else {
+            var _loop_1 = function (i) {
+                if (!files[i].type.match(this_1.imageRegexPattern)) {
                     console.log("Not an image!");
+                    return { value: void 0 };
                 }
+                this_1.createThumbnail(files[i])
+                    .then(function (thumbnailUrl) {
+                    var entryFormImage = new entry_form_image_1.EntryFormImage(files[i], thumbnailUrl.toString());
+                    _this.model.entryFormImages.push(entryFormImage);
+                });
+            };
+            var this_1 = this;
+            for (var i = 0; i < files.length; i++) {
+                var state_1 = _loop_1(i);
+                if (typeof state_1 === "object")
+                    return state_1.value;
             }
         }
+    };
+    JournalEntryFormComponent.prototype.createThumbnail = function (file) {
+        var fileReader = new FileReader();
+        return new Promise(function (resolve, reject) {
+            fileReader.onload = function (e) {
+                resolve(e.target.result);
+            };
+            fileReader.readAsDataURL(file);
+        });
     };
     return JournalEntryFormComponent;
 }());

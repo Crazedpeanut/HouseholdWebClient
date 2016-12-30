@@ -12,6 +12,8 @@ import { DashboardComponent } from './component/dashboard.component';
 import {FormsModule} from "@angular/forms";
 import { HouseholdModalComponent } from "./component/household-modal.component";
 import { ImageSelectionContent } from './component/image-selection.component';
+import {JournalEntryFormImagesComponent} from "./component/journal-entry-form-images.component";
+import {JournalEntryFormImageComponent} from "./component/journal-entry-form-image.component";
 
 @NgModule({
   imports:      [
@@ -28,7 +30,9 @@ import { ImageSelectionContent } from './component/image-selection.component';
       JournalEntryListComponent,
       DashboardComponent,
       HouseholdModalComponent,
-      ImageSelectionContent
+      ImageSelectionContent,
+      JournalEntryFormImagesComponent,
+      JournalEntryFormImageComponent
   ],
   entryComponents: [
       ImageSelectionContent

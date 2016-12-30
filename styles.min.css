@@ -31,6 +31,24 @@ form a::after {
     float: right; }
   .journal-entry-form-inner .image-uploads input {
     display: none; }
+  .journal-entry-form-inner journal-entry-form-images .selected-images .row .selected-image-container {
+    overflow: hidden;
+    height: 100px;
+    width: 100px;
+    background: lightgray;
+    position: relative; }
+    .journal-entry-form-inner journal-entry-form-images .selected-images .row .selected-image-container .selected-image {
+      width: 100%; }
+    .journal-entry-form-inner journal-entry-form-images .selected-images .row .selected-image-container .delete-overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      position: absolute; }
+      .journal-entry-form-inner journal-entry-form-images .selected-images .row .selected-image-container .delete-overlay img {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        vertical-align: middle; }
 
 .journal-entries .journal-entry {
   margin-top: 5px;
@@ -49,3 +67,6 @@ nav.navbar-household a {
 
 nav.navbar-household .navbar-toggle span {
   background-color: #ffc107; }
+
+.invisible {
+  display: none; }

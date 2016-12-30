@@ -13,9 +13,8 @@
                 <a><span><img class="form-icon" src="images/glyphicons-12-camera@3x.png"/></span> Upload Images</a>
                 <input type="file" accept="image/*" name="images" class="form-control" (change)="onImageSelectChange($event)" value="Add Photos" multiple/>
             </label>
-            <div class="selected-images" *ngFor="let image of model.images">
-                {{ image }}
-            </div>
+
+            <journal-entry-form-images [entryFormImages]="model.entryFormImages"></journal-entry-form-images>
         </div>
 
         <div class="form-group">
