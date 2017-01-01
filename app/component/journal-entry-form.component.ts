@@ -25,7 +25,7 @@ export class JournalEntryFormComponent{
     console.log("Submit!");
     let mapper = new JournalEntryFormToJournalEntry();
     let journalEntry = mapper.map(this.model);
-    let imagePromises: [Promise<JournalImage>];
+    let imagePromises = new Array<Promise<JournalImage>>();
 
     for (let i = 0; i < this.model.entryFormImages.length; i++) {
       let promise = this.journalService.createJournalImage(this.model.entryFormImages[i].file);

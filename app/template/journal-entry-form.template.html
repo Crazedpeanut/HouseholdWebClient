@@ -1,11 +1,16 @@
 <div class="journal-entry-form-inner">
-    <form (submit)="onSubmit();resetForm()">
+    <form (ngSubmit)="onSubmit();resetForm()" #journalEntryForm="ngForm">
+
+        <div class="form-group">
+            <input type="text" class="form-control" name="userTagInput" placeholder="Who should see this entry?" required/>
+        </div>
 
         <div class="form-group">
             <input type="text" class="form-control" name="title" [(ngModel)]="model.title" placeholder="Entry title" required/>
         </div>
+
         <div class="form-group">
-            <textarea class="entry-textarea form-control" name="content" [(ngModel)]="model.description" placeholder="Write your journal entry" required></textarea>
+            <textarea class="entry-textarea form-control" name="content" [(ngModel)]="model.content" placeholder="Write your journal entry" required></textarea>
         </div>
 
         <div class="form-group">

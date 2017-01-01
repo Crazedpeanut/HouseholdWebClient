@@ -11,4 +11,15 @@ import {EntryFormImage} from "../model/entry-form-image";
 })
 export class JournalEntryFormImagesComponent{
     @Input() entryFormImages: EntryFormImage[];
+
+    deleteClickedImage (entry: EntryFormImage) {
+
+        console.log(entry);
+
+        let index = this.entryFormImages.findIndex(function (element: EntryFormImage) {
+            return element.thumbnailUrl === entry.thumbnailUrl;
+        });
+
+        this.entryFormImages.splice(index, 1);
+    }
 }

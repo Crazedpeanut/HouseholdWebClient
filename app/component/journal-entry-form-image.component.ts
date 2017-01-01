@@ -2,7 +2,7 @@
  * Created by john on 30/12/2016.
  */
 
-import {Component, Input} from "@angular/core";
+import {Component, Input, Output, EventEmitter} from "@angular/core";
 import {EntryFormImage} from "../model/entry-form-image";
 
 @Component({
@@ -11,6 +11,8 @@ import {EntryFormImage} from "../model/entry-form-image";
 })
 export class JournalEntryFormImageComponent{
     @Input() entryFormImage: EntryFormImage;
+    @Output() entryClicked = new EventEmitter<EntryFormImage>();
+
     deleteOverlayVisible: boolean = false;
 
     onMouseEnter() {
@@ -21,5 +23,8 @@ export class JournalEntryFormImageComponent{
         this.deleteOverlayVisible = false;
     }
 
+    onClick() {
+        this.entryClicked.emit(this.entryFormImage);
+    }
 
 }

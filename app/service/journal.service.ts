@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { Journal } from '../model/journal';
-import { MockJournal } from './MOCK_SERVICES';
 import {JournalEntry} from "../model/journal-entry";
 import {JournalImage} from "../model/journal-image";
 
@@ -9,12 +8,11 @@ import {JournalImage} from "../model/journal-image";
 export class JournalService {
   getJournalById(id: number): Promise<Journal> {
       console.log(`Getting journal with id: ${id}`);
-      return Promise.resolve(MockJournal);
+      return Promise.resolve(new Journal(0, []));
   }
 
   createJournalEntry(journalEntry: JournalEntry){
       journalEntry.createdDateTime = '2003-06-20T23:23:00.003Z';
-      MockJournal.journalEntries.push(journalEntry);
       return Promise.resolve(journalEntry);
   }
 

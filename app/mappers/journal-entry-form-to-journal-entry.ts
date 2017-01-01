@@ -7,8 +7,6 @@ export class JournalEntryFormToJournalEntry {
 
         entry.content = journalEntryForm.content;
         entry.title = journalEntryForm.title;
-
-
         return entry;
     }
 }
