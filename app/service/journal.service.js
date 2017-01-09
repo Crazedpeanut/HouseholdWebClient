@@ -9,28 +9,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var MOCK_SERVICES_1 = require("./MOCK_SERVICES");
+var journal_1 = require("../model/journal");
 var journal_image_1 = require("../model/journal-image");
-var JournalService = (function () {
-    function JournalService() {
+var household_user_1 = require("../model/household-user");
+var HouseholdService = (function () {
+    function HouseholdService() {
     }
-    JournalService.prototype.getJournalById = function (id) {
+    HouseholdService.prototype.getJournalById = function (id) {
         console.log("Getting journal with id: " + id);
-        return Promise.resolve(MOCK_SERVICES_1.MockJournal);
+        return Promise.resolve(new journal_1.Journal(0, []));
     };
-    JournalService.prototype.createJournalEntry = function (journalEntry) {
+    HouseholdService.prototype.createJournalEntry = function (journalEntry) {
         journalEntry.createdDateTime = '2003-06-20T23:23:00.003Z';
-        MOCK_SERVICES_1.MockJournal.journalEntries.push(journalEntry);
         return Promise.resolve(journalEntry);
     };
-    JournalService.prototype.createJournalImage = function (imageFile) {
+    HouseholdService.prototype.createJournalImage = function (imageFile) {
         return Promise.resolve(new journal_image_1.JournalImage(0, 'http://thumb1.shutterstock.com/display_pic_with_logo/2117717/285854987/stock-photo-food-table-healthy-delicious-organic-meal-concept-285854987.jpg', 'http://thumb1.shutterstock.com/display_pic_with_logo/2117717/285854987/stock-photo-food-table-healthy-delicious-organic-meal-concept-285854987.jpg'));
     };
-    return JournalService;
+    HouseholdService.prototype.getHouseholdUsers = function (householdId) {
+        return [
+            new household_user_1.HouseholdUser(0, 'Bob', 'Johns'),
+            new household_user_1.HouseholdUser(1, 'Frank', 'Johns'),
+            new household_user_1.HouseholdUser(2, 'Joseph', 'Johns'),
+            new household_user_1.HouseholdUser(3, 'Lisa', 'Johns'),
+        ];
+    };
+    return HouseholdService;
 }());
-JournalService = __decorate([
+HouseholdService = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [])
-], JournalService);
-exports.JournalService = JournalService;
+], HouseholdService);
+exports.HouseholdService = HouseholdService;
 //# sourceMappingURL=journal.service.js.map

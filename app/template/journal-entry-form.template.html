@@ -2,7 +2,7 @@
     <form (ngSubmit)="onSubmit();resetForm()" #journalEntryForm="ngForm">
 
         <div class="form-group">
-            <household-tagged-user-list [taggedUsers]="model.taggedUsers"></household-tagged-user-list>
+            <household-tagged-user-list [canDelete]="canDeleteTaggedUsers" [taggedUsers]="model.taggedUsers"></household-tagged-user-list>
             <household-user-typeahead (onUserSelected)="onUserSelected($event)"></household-user-typeahead>
         </div>
 

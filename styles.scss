@@ -102,8 +102,31 @@ form {
   .tagged-user {
     background: #d9edf7;
     float: left;
+    position: relative;
     padding: $horizontal-padding-px;
     margin: $vertical-margin-px;
+
+    .delete-icon {
+      position: absolute;
+      height: 13px;
+      width: 13px;
+      top: -2px;
+      right: -2px;
+
+      .delete-icon-background {
+
+        circle {
+          fill: red;
+          position: absolute;
+        }
+      }
+
+      .delete-icon-cross {
+        position: absolute;
+        height: 100%;
+        padding: 3px;
+      }
+    }
   }
 }
 

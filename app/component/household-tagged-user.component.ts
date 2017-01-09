@@ -11,8 +11,11 @@ import {HouseholdUser} from "../model/household-user";
 })
 export class HouseholdTaggedUserComponent {
     @Input() householdUser: HouseholdUser;
-    public canDelete = false;
     @Output() onTaggedUserDelete = new EventEmitter<HouseholdUser>();
+    @Input() canDelete = false;
 
-
+    onClick() {
+        console.log("On Delete Tagged User");
+        this.onTaggedUserDelete.emit(this.householdUser);
+    }
 }

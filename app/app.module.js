@@ -23,6 +23,10 @@ var household_modal_component_1 = require("./component/household-modal.component
 var image_selection_component_1 = require("./component/image-selection.component");
 var journal_entry_form_images_component_1 = require("./component/journal-entry-form-images.component");
 var journal_entry_form_image_component_1 = require("./component/journal-entry-form-image.component");
+var household_user_typeahead_component_1 = require("./component/household-user-typeahead.component");
+var title_case_pipe_1 = require("./pipes/title-case.pipe");
+var household_tagged_user_list_component_1 = require("./component/household-tagged-user-list.component");
+var household_tagged_user_component_1 = require("./component/household-tagged-user.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -46,11 +50,16 @@ AppModule = __decorate([
             household_modal_component_1.HouseholdModalComponent,
             image_selection_component_1.ImageSelectionContent,
             journal_entry_form_images_component_1.JournalEntryFormImagesComponent,
-            journal_entry_form_image_component_1.JournalEntryFormImageComponent
+            journal_entry_form_image_component_1.JournalEntryFormImageComponent,
+            household_user_typeahead_component_1.HouseholdUserTypeAheadComponent,
+            title_case_pipe_1.TitleCasePipe,
+            household_tagged_user_list_component_1.HouseholdTaggerUserListComponent,
+            household_tagged_user_component_1.HouseholdTaggedUserComponent
         ],
         entryComponents: [
             image_selection_component_1.ImageSelectionContent
         ],
+        schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA],
         bootstrap: [app_component_1.AppComponent]
     }),
     __metadata("design:paramtypes", [])

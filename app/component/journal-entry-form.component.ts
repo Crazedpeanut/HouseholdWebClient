@@ -18,6 +18,7 @@ export class JournalEntryFormComponent{
   public fileInputContent : any;
   model: JournalEntryForm = new JournalEntryForm();
   imageRegexPattern = /image-*/;
+  public canDeleteTaggedUsers = true;
 
   constructor(private householdService: HouseholdService, private thumbnailService: ThumbnailService){
 

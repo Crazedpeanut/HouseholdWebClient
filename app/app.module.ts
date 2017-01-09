@@ -1,4 +1,4 @@
-import { NgModule }      from '@angular/core';
+import {NgModule, CUSTOM_ELEMENTS_SCHEMA}      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -45,6 +45,7 @@ import {HouseholdTaggedUserComponent} from "./component/household-tagged-user.co
   entryComponents: [
       ImageSelectionContent
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

@@ -51,8 +51,22 @@ form a::after {
 .tagged-user-list .tagged-user {
   background: #d9edf7;
   float: left;
+  position: relative;
   padding: 5px;
   margin: 5px; }
+  .tagged-user-list .tagged-user .delete-icon {
+    position: absolute;
+    height: 13px;
+    width: 13px;
+    top: -2px;
+    right: -2px; }
+    .tagged-user-list .tagged-user .delete-icon .delete-icon-background circle {
+      fill: red;
+      position: absolute; }
+    .tagged-user-list .tagged-user .delete-icon .delete-icon-cross {
+      position: absolute;
+      height: 100%;
+      padding: 3px; }
 
 .journal-entries .journal-entry {
   margin-top: 5px;
