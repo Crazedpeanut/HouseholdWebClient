@@ -61,12 +61,6 @@ form {
     float: right;
   }
 
-  .image-uploads {
-    input {
-      display: none
-    }
-  }
-
   journal-entry-form-images {
 
     .selected-images{
@@ -101,6 +95,15 @@ form {
         }
       }
     }
+  }
+}
+
+.tagged-user-list {
+  .tagged-user {
+    background: #d9edf7;
+    float: left;
+    padding: $horizontal-padding-px;
+    margin: $vertical-margin-px;
   }
 }
 

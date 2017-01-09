@@ -7,7 +7,5 @@ import { JournalEntry } from '../model/journal-entry';
   providers: [ ]
 })
 export class JournalEntryListComponent {
-
-  @Input()
-  journalEntries: JournalEntry[];
+  @Input() journalEntries: JournalEntry[];
 }

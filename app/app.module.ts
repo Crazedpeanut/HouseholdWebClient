@@ -14,6 +14,10 @@ import { HouseholdModalComponent } from "./component/household-modal.component";
 import { ImageSelectionContent } from './component/image-selection.component';
 import {JournalEntryFormImagesComponent} from "./component/journal-entry-form-images.component";
 import {JournalEntryFormImageComponent} from "./component/journal-entry-form-image.component";
+import {HouseholdUserTypeAheadComponent} from "./component/household-user-typeahead.component";
+import {TitleCasePipe} from "./pipes/title-case.pipe";
+import {HouseholdTaggerUserListComponent} from "./component/household-tagged-user-list.component";
+import {HouseholdTaggedUserComponent} from "./component/household-tagged-user.component";
 
 @NgModule({
   imports:      [
@@ -32,7 +36,11 @@ import {JournalEntryFormImageComponent} from "./component/journal-entry-form-ima
       HouseholdModalComponent,
       ImageSelectionContent,
       JournalEntryFormImagesComponent,
-      JournalEntryFormImageComponent
+      JournalEntryFormImageComponent,
+      HouseholdUserTypeAheadComponent,
+      TitleCasePipe,
+      HouseholdTaggerUserListComponent,
+      HouseholdTaggedUserComponent
   ],
   entryComponents: [
       ImageSelectionContent

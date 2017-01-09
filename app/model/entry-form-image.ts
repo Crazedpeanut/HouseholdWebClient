@@ -4,6 +4,6 @@
 export class EntryFormImage {
     constructor(
         public file: File,
-        public thumbnailUrl: String
+        public thumbnailUrl: string
     ) {}
 }

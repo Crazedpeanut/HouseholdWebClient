@@ -2,7 +2,8 @@
     <form (ngSubmit)="onSubmit();resetForm()" #journalEntryForm="ngForm">
 
         <div class="form-group">
-            <input type="text" class="form-control" name="userTagInput" placeholder="Who should see this entry?" required/>
+            <household-tagged-user-list [taggedUsers]="model.taggedUsers"></household-tagged-user-list>
+            <household-user-typeahead (onUserSelected)="onUserSelected($event)"></household-user-typeahead>
         </div>
 
         <div class="form-group">
@@ -16,10 +17,10 @@
         <div class="form-group">
             <label class="image-uploads">
                 <a><span><img class="form-icon" src="images/glyphicons-12-camera@3x.png"/></span> Upload Images</a>
-                <input type="file" accept="image/*" name="images" class="form-control" (change)="onImageSelectChange($event)" value="Add Photos" multiple/>
+                <input #imageInput type="file" accept="image/*" name="images" class="form-control invisible" [(ngModel)]="fileInputContent" (change)="onImageSelectChange($event, input)" value="Add Photos" multiple/>
             </label>
 
-            <journal-entry-form-images [entryFormImages]="model.entryFormImages"></journal-entry-form-images>
+            <journal-entry-form-images (onDelete)="onDeleteSelectedImage($event);" [entryFormImages]="model.entryFormImages"></journal-entry-form-images>
         </div>
 
         <div class="form-group">

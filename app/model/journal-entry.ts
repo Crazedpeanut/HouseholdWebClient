@@ -1,4 +1,5 @@
 import { JournalImage } from './journal-image';
+import {HouseholdUser} from "./household-user";
 
 export class JournalEntry {
 
@@ -6,5 +7,6 @@ export class JournalEntry {
               public title: string = null,
               public content: string = null,
               public createdDateTime: string = null,
-              public images: JournalImage[] = null){ }
+              public images: JournalImage[] = [],
+              public taggedUsers: HouseholdUser[] = []){ }
 }

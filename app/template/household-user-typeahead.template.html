@@ -1,0 +1,1 @@
+<input #input type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" [resultFormatter]="formatter" (selectItem)="onSelectedItem($event, input)" placeholder="Tag your family and friends"/>

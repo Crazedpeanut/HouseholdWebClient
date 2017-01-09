@@ -1,14 +1,15 @@
 <div class="journal-entries">
-  <div *ngFor="let entry of journalEntries" class="row">
-    <div class="journal-entry col-lg-12 col-md-12 col-sm-12">
-        <h2 class="entry-title heading">{{ entry.title }}</h2>
-        <p class="entry-created sub-heading">{{ entry.createdDateTime | date }}</p>
-        <p>{{ entry.content }}</p>
-        <div class="entry-images row">
-            <div *ngFor="let image of entry.images" class="col-lg-2 col-md-2 col-sm-3 col-xs-3 entry-image">
-                <img src="{{ image.thumbnailUrl }}"/>
+    <div *ngFor="let entry of journalEntries" class="row">
+        <div class="journal-entry col-lg-12 col-md-12 col-sm-12">
+            <h2 class="entry-title heading">{{ entry.title }}</h2>
+            <p class="entry-created sub-heading">{{ entry.createdDateTime | date }}</p>
+            <p>Tagged: <household-tagged-user-list [taggedUsers]="entry.taggedUsers"></household-tagged-user-list></p>
+            <p>{{ entry.content }}</p>
+            <div class="entry-images row">
+                <div *ngFor="let image of entry.images" class="col-lg-2 col-md-2 col-sm-3 col-xs-3 entry-image">
+                    <img src="{{ image.thumbnailUrl }}"/>
+                </div>
             </div>
         </div>
     </div>
-  </div>
 </div>

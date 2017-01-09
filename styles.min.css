@@ -29,8 +29,6 @@ form a::after {
     width: 100%; }
   .journal-entry-form-inner .entry-submit {
     float: right; }
-  .journal-entry-form-inner .image-uploads input {
-    display: none; }
   .journal-entry-form-inner journal-entry-form-images .selected-images .row .selected-image-container {
     overflow: hidden;
     height: 100px;
@@ -49,6 +47,12 @@ form a::after {
         left: 50%;
         transform: translate(-50%, -50%);
         position: absolute; }
+
+.tagged-user-list .tagged-user {
+  background: #d9edf7;
+  float: left;
+  padding: 5px;
+  margin: 5px; }
 
 .journal-entries .journal-entry {
   margin-top: 5px;
