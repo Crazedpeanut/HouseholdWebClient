@@ -68,8 +68,8 @@ form {
       .row {
         .selected-image-container {
           overflow: hidden;
-          height: 100px;
-          width: 100px;
+          max-height: 100px;
+          max-width: 100px;
           background: lightgray;
           position: relative;
 
@@ -153,9 +153,17 @@ household-tagged-user-list {
   }
 
   .entry-images {
-    .entry-image img{
-      width: 100%;
+    .entry-list-image-container {
+
+      max-width: 100px;
+      max-height: 100px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
     }
+
   }
 }
 

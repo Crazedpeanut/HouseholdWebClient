@@ -31,8 +31,8 @@ form a::after {
     float: right; }
   .journal-entry-form-inner journal-entry-form-images .selected-images .row .selected-image-container {
     overflow: hidden;
-    height: 100px;
-    width: 100px;
+    max-height: 100px;
+    max-width: 100px;
     background: lightgray;
     position: relative; }
     .journal-entry-form-inner journal-entry-form-images .selected-images .row .selected-image-container .selected-image {
@@ -79,8 +79,12 @@ household-tagged-user-list {
     line-height: 33px;
     font-size: 20px; }
 
-.journal-entries .entry-images .entry-image img {
-  width: 100%; }
+.journal-entries .entry-images .entry-list-image-container {
+  max-width: 100px;
+  max-height: 100px;
+  overflow: hidden; }
+  .journal-entries .entry-images .entry-list-image-container img {
+    width: 100%; }
 
 nav.navbar-household a {
   color: #ffc107; }

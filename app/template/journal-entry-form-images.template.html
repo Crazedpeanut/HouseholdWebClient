@@ -1,6 +1,6 @@
 <div *ngIf="entryFormImages" class="selected-images">
     <div class="row">
-        <div *ngFor="let entryFormImage of entryFormImages" class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <div *ngFor="let entryFormImage of entryFormImages" class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
            <journal-entry-form-image (entryClicked)="deleteClickedImage($event)" [entryFormImage]="entryFormImage"></journal-entry-form-image>
         </div>
     </div>
