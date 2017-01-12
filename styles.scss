@@ -98,37 +98,43 @@ form {
   }
 }
 
-.tagged-user-list {
-  .tagged-user {
-    background: #d9edf7;
-    float: left;
-    position: relative;
-    padding: $horizontal-padding-px;
-    margin: $vertical-margin-px;
+household-tagged-user-list {
 
-    .delete-icon {
-      position: absolute;
-      height: 13px;
-      width: 13px;
-      top: -2px;
-      right: -2px;
+  display: inline-block;
 
-      .delete-icon-background {
+  .tagged-user-list {
+    .tagged-user {
+      background: #d9edf7;
+      float: left;
+      position: relative;
+      padding: $horizontal-padding-px;
+      margin: $vertical-margin-px;
 
-        circle {
-          fill: red;
-          position: absolute;
-        }
-      }
-
-      .delete-icon-cross {
+      .delete-icon {
         position: absolute;
-        height: 100%;
-        padding: 3px;
+        height: 13px;
+        width: 13px;
+        top: -2px;
+        right: -2px;
+
+        .delete-icon-background {
+
+          circle {
+            fill: red;
+            position: absolute;
+          }
+        }
+
+        .delete-icon-cross {
+          position: absolute;
+          height: 100%;
+          padding: 3px;
+        }
       }
     }
   }
 }
+
 
 .journal-entries {
 
