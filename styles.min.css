@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 .heading {
-  color: #ffc107;
-  font-family: "Roboto", sans-serif; }
+  color: #ffc107; }
 
 form .form-control:focus {
   border-color: #ffc107;
@@ -14,8 +13,7 @@ form a::after {
   text-decoration: none; }
 
 .sub-heading {
-  color: #888;
-  font-family: "Roboto", sans-serif; }
+  color: #888; }
 
 .journal-entry-form-inner {
   margin-top: 5px;
@@ -48,25 +46,29 @@ form a::after {
         transform: translate(-50%, -50%);
         position: absolute; }
 
+.image-uploads a:hover {
+  text-decoration: underline; }
+
 household-tagged-user-list {
   display: inline-block; }
+  household-tagged-user-list .tagged-user-list household-tagged-user:first-of-type {
+    margin-left: 0; }
+  household-tagged-user-list .tagged-user-list household-tagged-user {
+    margin-bottom: 16px;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: inline-block; }
   household-tagged-user-list .tagged-user-list .tagged-user {
-    background: #d9edf7;
     float: left;
     position: relative;
-    padding: 5px;
-    margin: 5px; }
+    padding: 5px; }
     household-tagged-user-list .tagged-user-list .tagged-user .delete-icon {
       position: absolute;
       height: 13px;
       width: 13px;
-      top: -2px;
-      right: -2px; }
-      household-tagged-user-list .tagged-user-list .tagged-user .delete-icon .delete-icon-background circle {
-        fill: red;
-        position: absolute; }
+      top: 0;
+      right: 0; }
       household-tagged-user-list .tagged-user-list .tagged-user .delete-icon .delete-icon-cross {
-        position: absolute;
         height: 100%;
         padding: 3px; }
 
@@ -85,12 +87,6 @@ household-tagged-user-list {
   overflow: hidden; }
   .journal-entries .entry-images .entry-list-image-container img {
     width: 100%; }
-
-nav.navbar-household a {
-  color: #ffc107; }
-
-nav.navbar-household .navbar-toggle span {
-  background-color: #ffc107; }
 
 .invisible {
   display: none; }

@@ -12,7 +12,6 @@ var core_1 = require("@angular/core");
 var NavComponent = (function () {
     function NavComponent() {
         this.isCollapsed = false;
-        this.title = "Household";
     }
     return NavComponent;
 }());

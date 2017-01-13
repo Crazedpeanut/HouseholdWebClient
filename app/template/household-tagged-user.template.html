@@ -1,9 +1,7 @@
-<div class="tagged-user">
+<template #taggedUserPopoverContent>This is a user</template>
+<button class="tagged-user btn btn-secondary" [ngbPopover]="taggedUserPopoverContent" triggers="mouseenter:mouseleave" [popoverTitle]="householdUser">
     <div (click)="onClick()" class="delete-icon" [class.invisible]="!canDelete" >
         <img class="delete-icon-cross" src="images/glyphicons-halflings-14-remove@3x.png"/>
-        <svg viewBox="0 0 12 12" class="delete-icon-background" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="6" cy="6" r="6"/>
-        </svg>
     </div>
     {{ householdUser }}
-</div>
+</button>

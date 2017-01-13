@@ -13,14 +13,10 @@ $horizontal-padding-px: 5px;
 $default-border-radius: 4px;
 $list-title-text-colour: #000;
 $list-heading-height: 43px;
-$heading-fonts: 'Roboto', sans-serif;
-$sub-heading-fonts: 'Roboto', sans-serif;
-$paragraph-fonts: 'Roboto', sans-serif;
 $translucent-background: rgba(0, 0, 0, 0.4);
 
 .heading {
   color: $primary-color;
-  font-family: $heading-fonts;
 }
 
 form {
@@ -39,7 +35,6 @@ form {
 }
 .sub-heading {
   color: $secondary-color;
-  font-family: $sub-heading-fonts;
 }
 
 .journal-entry-form-inner {
@@ -98,35 +93,41 @@ form {
   }
 }
 
+.image-uploads a:hover {
+  text-decoration: underline;
+}
+
+
 household-tagged-user-list {
 
   display: inline-block;
 
   .tagged-user-list {
+
+    household-tagged-user:first-of-type {
+      margin-left: 0;
+    }
+
+    household-tagged-user {
+      margin-bottom: 16px;
+      margin-left: 5px;
+      margin-right: 5px;
+      display: inline-block;
+    }
+
     .tagged-user {
-      background: #d9edf7;
       float: left;
       position: relative;
-      padding: $horizontal-padding-px;
-      margin: $vertical-margin-px;
+      padding: 5px;
 
       .delete-icon {
         position: absolute;
         height: 13px;
         width: 13px;
-        top: -2px;
-        right: -2px;
-
-        .delete-icon-background {
-
-          circle {
-            fill: red;
-            position: absolute;
-          }
-        }
+        top: 0;
+        right: 0;
 
         .delete-icon-cross {
-          position: absolute;
           height: 100%;
           padding: 3px;
         }
@@ -164,19 +165,6 @@ household-tagged-user-list {
       }
     }
 
-  }
-}
-
-
-nav.navbar-household {
-  a {
-    color: $primary-color;
-  }
-
-  .navbar-toggle {
-    span {
-      background-color: $primary-color;
-    }
   }
 }
 
