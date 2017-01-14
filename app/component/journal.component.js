@@ -12,10 +12,14 @@ var core_1 = require("@angular/core");
 require("rxjs/add/operator/switchMap");
 var journal_service_1 = require("../service/journal.service");
 var router_1 = require("@angular/router");
+var platform_browser_1 = require("@angular/platform-browser");
+var constants_1 = require("../constants");
 var JournalComponent = (function () {
-    function JournalComponent(journalService, route) {
+    function JournalComponent(journalService, route, titleService) {
         this.journalService = journalService;
         this.route = route;
+        this.PAGE_TITLE = "Journal";
+        titleService.setTitle(constants_1.PAGE_TITLE_PREFIX + " " + this.PAGE_TITLE);
     }
     JournalComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -34,7 +38,7 @@ JournalComponent = __decorate([
         templateUrl: 'app/template/journal.template.html',
         providers: [journal_service_1.HouseholdService]
     }),
-    __metadata("design:paramtypes", [journal_service_1.HouseholdService, router_1.ActivatedRoute])
+    __metadata("design:paramtypes", [journal_service_1.HouseholdService, router_1.ActivatedRoute, platform_browser_1.Title])
 ], JournalComponent);
 exports.JournalComponent = JournalComponent;
 //# sourceMappingURL=journal.component.js.map

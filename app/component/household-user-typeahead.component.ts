@@ -2,7 +2,7 @@
  * Created by john on 2/01/2017.
  */
 
-import {Component, Output, EventEmitter} from "@angular/core";
+import {Component, Output, EventEmitter, Input} from "@angular/core";
 import {HouseholdService} from "../service/journal.service";
 import {Observable} from "rxjs";
 import 'rxjs/add/operator/debounceTime';
@@ -18,8 +18,9 @@ import {HouseholdUser} from "../model/household-user";
 export class HouseholdUserTypeAheadComponent {
     public model: any;
     @Output() onUserSelected: EventEmitter<HouseholdUser> = new EventEmitter<HouseholdUser>();
+    @Input() users: HouseholdUser[];
 
-    constructor(private householdService: HouseholdService ){
+    constructor(){
 
     }
 
@@ -38,7 +39,7 @@ export class HouseholdUserTypeAheadComponent {
             .debounceTime(200)
             .distinctUntilChanged()
             .map(term => term === '' ?
-                [] : this.householdService.getHouseholdUsers(0).filter(v => {
+                [] : this.users.filter(v => {
                         let expression = new RegExp(term, 'ig');
                         return (expression.test(v.firstname) || expression.test(v.lastname));
                     }).slice(0, 10));

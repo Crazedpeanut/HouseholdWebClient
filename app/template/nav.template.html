@@ -4,12 +4,12 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <a class="navbar-brand" href="/">Home</a>
+        <a class="navbar-brand" [routerLink]="">{{ title }}</a>
 
         <div id="collapsableNavbar" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto mt-2 mt-md-0">
                 <li class="nav-item"><a class="nav-link" [routerLink]='["/journal", 0]' [routerLinkActive]="['is-active']">Journal</a></li>
-                <li class="nav-item"><a class="nav-link" [routerLink]='["/messages", 0]' [routerLinkActive]="['is-active']">Messages</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/messages" [routerLinkActive]="['is-active']">Messages</a></li>
             </ul>
         </div>
 </nav>

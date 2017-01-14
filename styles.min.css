@@ -1,7 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
-.heading {
-  color: #ffc107; }
-
 form .form-control:focus {
   border-color: #ffc107;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 193, 7, 0.6); }
@@ -54,14 +51,12 @@ household-tagged-user-list {
   household-tagged-user-list .tagged-user-list household-tagged-user:first-of-type {
     margin-left: 0; }
   household-tagged-user-list .tagged-user-list household-tagged-user {
-    margin-bottom: 16px;
     margin-left: 5px;
     margin-right: 5px;
     display: inline-block; }
   household-tagged-user-list .tagged-user-list .tagged-user {
     float: left;
-    position: relative;
-    padding: 5px; }
+    position: relative; }
     household-tagged-user-list .tagged-user-list .tagged-user .delete-icon {
       position: absolute;
       height: 13px;
@@ -87,6 +82,3 @@ household-tagged-user-list {
   overflow: hidden; }
   .journal-entries .entry-images .entry-list-image-container img {
     width: 100%; }
-
-.invisible {
-  display: none; }

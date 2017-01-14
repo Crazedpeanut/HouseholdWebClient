@@ -7,6 +7,7 @@ export class JournalEntry {
               public title: string = null,
               public content: string = null,
               public createdDateTime: string = null,
+              public author: HouseholdUser = null,
               public images: JournalImage[] = [],
               public taggedUsers: HouseholdUser[] = []){ }
 }

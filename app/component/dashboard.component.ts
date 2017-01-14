@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Title} from "@angular/platform-browser";
+import {PAGE_TITLE_PREFIX} from "../constants";
 
 @Component({
     selector: 'dashboard',
@@ -6,4 +8,9 @@ import { Component } from '@angular/core';
     providers: [ ]
 })
 export class DashboardComponent {
+    PAGE_TITLE: String = "Dashboard";
+
+    constructor(titleService: Title) {
+        titleService.setTitle(`${PAGE_TITLE_PREFIX} ${this.PAGE_TITLE}`)
+    }
 }

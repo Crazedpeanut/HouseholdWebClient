@@ -1,8 +1,9 @@
 <div class="journal-entries">
     <div *ngFor="let entry of journalEntries" class="row">
         <div class="journal-entry col-lg-12 col-md-12 col-sm-12">
-            <h2 class="entry-title heading">{{ entry.title }}</h2>
-            <p class="entry-created sub-heading">{{ entry.createdDateTime | date }}</p>
+            <h2 class="entry-title">{{ entry.title }}</h2>
+            <p class="entry-created mb-0">{{ entry.createdDateTime | date }}</p>
+            <p class="mb-0">Author: <span><household-tagged-user [canDelete]="false" [householdUser]="entry.author"></household-tagged-user></span></p>
             <household-tagged-user-list [canDelete]="false" [taggedUsers]="entry.taggedUsers"></household-tagged-user-list>
             <p>{{ entry.content }}</p>
             <div class="entry-images row">

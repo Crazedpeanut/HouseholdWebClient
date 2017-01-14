@@ -1,5 +1,5 @@
 <div class="selected-image-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" (click)="onClick()">
-    <div class="delete-overlay" [class.invisible]="!deleteOverlayVisible">
+    <div class="delete-overlay" [attr.hidden]="!deleteOverlayVisible">
         <img src="images/glyphicons-halflings-20-trash@3x.png"/>
     </div>
     <img class="selected-image" src="{{ entryFormImage.thumbnailUrl }}"/>

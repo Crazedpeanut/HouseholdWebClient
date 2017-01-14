@@ -18,6 +18,7 @@ import {HouseholdUserTypeAheadComponent} from "./component/household-user-typeah
 import {TitleCasePipe} from "./pipes/title-case.pipe";
 import {HouseholdTaggerUserListComponent} from "./component/household-tagged-user-list.component";
 import {HouseholdTaggedUserComponent} from "./component/household-tagged-user.component";
+import {MessagesComponent} from "./template/messages.component";
 
 @NgModule({
   imports:      [
@@ -40,7 +41,8 @@ import {HouseholdTaggedUserComponent} from "./component/household-tagged-user.co
       HouseholdUserTypeAheadComponent,
       TitleCasePipe,
       HouseholdTaggerUserListComponent,
-      HouseholdTaggedUserComponent
+      HouseholdTaggedUserComponent,
+      MessagesComponent
   ],
   entryComponents: [
       ImageSelectionContent

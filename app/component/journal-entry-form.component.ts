@@ -1,4 +1,4 @@
-import {Component, Output, EventEmitter, ViewChild} from '@angular/core';
+import {Component, Output, EventEmitter, ViewChild, OnInit} from '@angular/core';
 import {JournalEntryForm} from "../model/journal-entry-form";
 import {HouseholdService} from "../service/journal.service";
 import {JournalEntryFormToJournalEntry} from "../mappers/journal-entry-form-to-journal-entry";
@@ -6,27 +6,36 @@ import {JournalEntry} from "../model/journal-entry";
 import {JournalImage} from "../model/journal-image";
 import {EntryFormImage} from "../model/entry-form-image";
 import {ThumbnailService} from "../service/thumbnail.service";
+import {HouseholdUser} from "../model/household-user";
+import {UserService} from "../service/user.service";
 
 @Component({
   selector: 'journal-entry-form',
   templateUrl: 'app/template/journal-entry-form.template.html',
-  providers: [ HouseholdService, ThumbnailService ]
+  providers: [ HouseholdService, ThumbnailService, UserService ]
 })
-export class JournalEntryFormComponent{
+export class JournalEntryFormComponent implements OnInit {
 
   @Output() onJournalEntrySubmitted = new EventEmitter<JournalEntry>();
   public fileInputContent : any;
   model: JournalEntryForm = new JournalEntryForm();
   imageRegexPattern = /image-*/;
   public canDeleteTaggedUsers = true;
+  public unTaggedHouseholdUsers: HouseholdUser[] = [];
 
-  constructor(private householdService: HouseholdService, private thumbnailService: ThumbnailService){
+  constructor(private householdService: HouseholdService, private thumbnailService: ThumbnailService, private userService: UserService){
 
+  }
+
+  ngOnInit(): void {
+    this.unTaggedHouseholdUsers = this.householdService.getHouseholdUsers(0);
   }
 
   onUserSelected(user: any): void {
     console.log(user);
     this.model.taggedUsers.push(user);
+    let userIndex = this.unTaggedHouseholdUsers.indexOf(user);
+    this.unTaggedHouseholdUsers.splice(userIndex, 1);
   }
 
   onDeleteSelectedImage(image: EntryFormImage) {
@@ -41,8 +50,11 @@ export class JournalEntryFormComponent{
 
   onSubmit(): void {
     let mapper = new JournalEntryFormToJournalEntry();
-    let journalEntry = mapper.map(this.model);
+    let journalEntry: JournalEntry;
     let imagePromises = new Array<Promise<JournalImage>>();
+
+    this.model.author = this.userService.getLoggedInUser();
+    journalEntry = mapper.map(this.model);
 
     for (let i = 0; i < this.model.entryFormImages.length; i++) {
       let entryFormImage = this.model.entryFormImages[i];

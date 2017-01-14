@@ -9,8 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var platform_browser_1 = require("@angular/platform-browser");
+var constants_1 = require("../constants");
 var DashboardComponent = (function () {
-    function DashboardComponent() {
+    function DashboardComponent(titleService) {
+        this.PAGE_TITLE = "Dashboard";
+        titleService.setTitle(constants_1.PAGE_TITLE_PREFIX + " " + this.PAGE_TITLE);
     }
     return DashboardComponent;
 }());
@@ -20,7 +24,7 @@ DashboardComponent = __decorate([
         templateUrl: 'app/template/dashboard.template.html',
         providers: []
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [platform_browser_1.Title])
 ], DashboardComponent);
 exports.DashboardComponent = DashboardComponent;
 //# sourceMappingURL=dashboard.component.js.map

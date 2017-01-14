@@ -6,6 +6,7 @@ export class JournalEntryForm {
                 public content: string = null,
                 public createdDateTime: string = null,
                 public entryFormImages: EntryFormImage[] = [],
+                public author: HouseholdUser = null,
                 public taggedUsers: HouseholdUser[] = []
     ){ }
 }

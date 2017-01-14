@@ -14,18 +14,26 @@ var journal_service_1 = require("../service/journal.service");
 var journal_entry_form_to_journal_entry_1 = require("../mappers/journal-entry-form-to-journal-entry");
 var entry_form_image_1 = require("../model/entry-form-image");
 var thumbnail_service_1 = require("../service/thumbnail.service");
+var user_service_1 = require("../service/user.service");
 var JournalEntryFormComponent = (function () {
-    function JournalEntryFormComponent(householdService, thumbnailService) {
+    function JournalEntryFormComponent(householdService, thumbnailService, userService) {
         this.householdService = householdService;
         this.thumbnailService = thumbnailService;
+        this.userService = userService;
         this.onJournalEntrySubmitted = new core_1.EventEmitter();
         this.model = new journal_entry_form_1.JournalEntryForm();
         this.imageRegexPattern = /image-*/;
         this.canDeleteTaggedUsers = true;
+        this.unTaggedHouseholdUsers = [];
     }
+    JournalEntryFormComponent.prototype.ngOnInit = function () {
+        this.unTaggedHouseholdUsers = this.householdService.getHouseholdUsers(0);
+    };
     JournalEntryFormComponent.prototype.onUserSelected = function (user) {
         console.log(user);
         this.model.taggedUsers.push(user);
+        var userIndex = this.unTaggedHouseholdUsers.indexOf(user);
+        this.unTaggedHouseholdUsers.splice(userIndex, 1);
     };
     JournalEntryFormComponent.prototype.onDeleteSelectedImage = function (image) {
         var index = this.model.entryFormImages.findIndex(function (element) {
@@ -37,8 +45,10 @@ var JournalEntryFormComponent = (function () {
     JournalEntryFormComponent.prototype.onSubmit = function () {
         var _this = this;
         var mapper = new journal_entry_form_to_journal_entry_1.JournalEntryFormToJournalEntry();
-        var journalEntry = mapper.map(this.model);
+        var journalEntry;
         var imagePromises = new Array();
+        this.model.author = this.userService.getLoggedInUser();
+        journalEntry = mapper.map(this.model);
         var _loop_1 = function (i) {
             var entryFormImage = this_1.model.entryFormImages[i];
             var promise = this_1.householdService.createJournalImage(entryFormImage.file);
@@ -103,9 +113,9 @@ JournalEntryFormComponent = __decorate([
     core_1.Component({
         selector: 'journal-entry-form',
         templateUrl: 'app/template/journal-entry-form.template.html',
-        providers: [journal_service_1.HouseholdService, thumbnail_service_1.ThumbnailService]
+        providers: [journal_service_1.HouseholdService, thumbnail_service_1.ThumbnailService, user_service_1.UserService]
     }),
-    __metadata("design:paramtypes", [journal_service_1.HouseholdService, thumbnail_service_1.ThumbnailService])
+    __metadata("design:paramtypes", [journal_service_1.HouseholdService, thumbnail_service_1.ThumbnailService, user_service_1.UserService])
 ], JournalEntryFormComponent);
 exports.JournalEntryFormComponent = JournalEntryFormComponent;
 //# sourceMappingURL=journal-entry-form.component.js.map

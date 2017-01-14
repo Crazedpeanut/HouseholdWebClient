@@ -23,8 +23,7 @@ JournalEntryListComponent = __decorate([
         selector: 'journal-entry-list',
         templateUrl: 'app/template/journal-entry-list.template.html',
         providers: []
-    }),
-    __metadata("design:paramtypes", [])
+    })
 ], JournalEntryListComponent);
 exports.JournalEntryListComponent = JournalEntryListComponent;
 //# sourceMappingURL=journal-entry-list.component.js.map

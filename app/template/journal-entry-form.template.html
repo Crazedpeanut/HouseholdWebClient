@@ -3,7 +3,15 @@
 
         <div class="form-group">
             <household-tagged-user-list [canDelete]="canDeleteTaggedUsers" [taggedUsers]="model.taggedUsers"></household-tagged-user-list>
-            <household-user-typeahead (onUserSelected)="onUserSelected($event)"></household-user-typeahead>
+            <div class="tag-user row">
+                <household-user-typeahead class="col-md-10" [users]="unTaggedHouseholdUsers" (onUserSelected)="onUserSelected($event)"></household-user-typeahead>
+                <div ngbDropdown [autoClose]="false" class="col-md-2">
+                    <input type="button" class="btn btn-secondary" id="tagUserDropdown" ngbDropdownToggle value="Select"/>
+                    <div class="dropdown-menu" aria-labelledby="tagUserDropdown">
+                        <input type="button" (click)="onUserSelected(user)" *ngFor="let user of unTaggedHouseholdUsers" value="{{ user }}" class="dropdown-item"/>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="form-group">
@@ -17,7 +25,7 @@
         <div class="form-group">
             <label class="image-uploads">
                 <a><span><img class="form-icon" src="images/glyphicons-12-camera@3x.png"/></span> Upload Images</a>
-                <input #imageInput type="file" accept="image/*" name="images" class="form-control invisible" [(ngModel)]="fileInputContent" (change)="onImageSelectChange($event, input)" value="Add Photos" multiple/>
+                <input #imageInput type="file" accept="image/*" name="images" class="form-control" [(ngModel)]="fileInputContent" (change)="onImageSelectChange($event, input)" value="Add Photos" multiple hidden/>
             </label>
 
             <journal-entry-form-images (onDelete)="onDeleteSelectedImage($event);" [entryFormImages]="model.entryFormImages"></journal-entry-form-images>

@@ -15,12 +15,15 @@ var NavComponent = (function () {
     }
     return NavComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], NavComponent.prototype, "title", void 0);
 NavComponent = __decorate([
     core_1.Component({
         selector: 'household-nav',
         templateUrl: 'app/template/nav.template.html'
-    }),
-    __metadata("design:paramtypes", [])
+    })
 ], NavComponent);
 exports.NavComponent = NavComponent;
 //# sourceMappingURL=nav.component.js.map
