@@ -24,7 +24,7 @@ var household_user_typeahead_component_1 = require("./component/household-user-t
 var title_case_pipe_1 = require("./pipes/title-case.pipe");
 var household_tagged_user_list_component_1 = require("./component/household-tagged-user-list.component");
 var household_tagged_user_component_1 = require("./component/household-tagged-user.component");
-var messages_component_1 = require("./template/messages.component");
+var messages_component_1 = require("./component/messages.component");
 var AppModule = (function () {
     function AppModule() {
     }

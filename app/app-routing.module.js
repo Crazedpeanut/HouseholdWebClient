@@ -9,7 +9,7 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var journal_component_1 = require("./component/journal.component");
 var dashboard_component_1 = require("./component/dashboard.component");
-var messages_component_1 = require("./template/messages.component");
+var messages_component_1 = require("./component/messages.component");
 var routes = [
     {
         path: "",

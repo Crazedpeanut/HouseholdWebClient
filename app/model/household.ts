@@ -4,7 +4,8 @@ import { HouseholdUser } from "./household-user";
  */
 export class Household {
     constructor(
-        id: number,
-        members: HouseholdUser[]
+        public id: number,
+        public name: String,
+        public members: HouseholdUser[]
     ) {}
 }

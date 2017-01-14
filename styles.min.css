@@ -82,3 +82,6 @@ household-tagged-user-list {
   overflow: hidden; }
   .journal-entries .entry-images .entry-list-image-container img {
     width: 100%; }
+
+.navbar-toggler {
+  position: relative; }

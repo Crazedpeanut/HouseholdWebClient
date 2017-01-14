@@ -1,6 +1,6 @@
 import {Component, Output, EventEmitter, ViewChild, OnInit} from '@angular/core';
 import {JournalEntryForm} from "../model/journal-entry-form";
-import {HouseholdService} from "../service/journal.service";
+import {JournalService} from "../service/journal.service";
 import {JournalEntryFormToJournalEntry} from "../mappers/journal-entry-form-to-journal-entry";
 import {JournalEntry} from "../model/journal-entry";
 import {JournalImage} from "../model/journal-image";
@@ -8,11 +8,12 @@ import {EntryFormImage} from "../model/entry-form-image";
 import {ThumbnailService} from "../service/thumbnail.service";
 import {HouseholdUser} from "../model/household-user";
 import {UserService} from "../service/user.service";
+import {SessionService} from "../service/session.service";
 
 @Component({
   selector: 'journal-entry-form',
   templateUrl: 'app/template/journal-entry-form.template.html',
-  providers: [ HouseholdService, ThumbnailService, UserService ]
+  providers: [ JournalService, ThumbnailService, SessionService ]
 })
 export class JournalEntryFormComponent implements OnInit {
 
@@ -23,12 +24,12 @@ export class JournalEntryFormComponent implements OnInit {
   public canDeleteTaggedUsers = true;
   public unTaggedHouseholdUsers: HouseholdUser[] = [];
 
-  constructor(private householdService: HouseholdService, private thumbnailService: ThumbnailService, private userService: UserService){
-
-  }
+  constructor(private journalService: JournalService,
+              private sessionService: SessionService,
+              private thumbnailService: ThumbnailService){}
 
   ngOnInit(): void {
-    this.unTaggedHouseholdUsers = this.householdService.getHouseholdUsers(0);
+    this.unTaggedHouseholdUsers = this.sessionService.getCurrentHousehold().members;
   }
 
   onUserSelected(user: any): void {
@@ -53,12 +54,12 @@ export class JournalEntryFormComponent implements OnInit {
     let journalEntry: JournalEntry;
     let imagePromises = new Array<Promise<JournalImage>>();
 
-    this.model.author = this.userService.getLoggedInUser();
+    this.model.author = this.sessionService.getLoggedInUser();
     journalEntry = mapper.map(this.model);
 
     for (let i = 0; i < this.model.entryFormImages.length; i++) {
       let entryFormImage = this.model.entryFormImages[i];
-      let promise = this.householdService.createJournalImage(entryFormImage.file);
+      let promise = this.journalService.createJournalImage(entryFormImage.file);
 
       promise.then(journalImage => {
         console.log("Image uploaded: " + journalImage.imageUrl);
@@ -74,7 +75,7 @@ export class JournalEntryFormComponent implements OnInit {
 
           journalEntry.images = journalImages;
 
-          this.householdService.createJournalEntry(journalEntry)
+          this.journalService.createJournalEntry(journalEntry)
               .then(entry => {
                 this.onJournalEntrySubmitted.emit(entry);
               });

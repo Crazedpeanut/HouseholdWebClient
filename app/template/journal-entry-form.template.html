@@ -6,7 +6,7 @@
             <div class="tag-user row">
                 <household-user-typeahead class="col-md-10" [users]="unTaggedHouseholdUsers" (onUserSelected)="onUserSelected($event)"></household-user-typeahead>
                 <div ngbDropdown [autoClose]="false" class="col-md-2">
-                    <input type="button" class="btn btn-secondary" id="tagUserDropdown" ngbDropdownToggle value="Select"/>
+                    <input type="button" class="btn btn-secondary" id="tagUserDropdown" ngbDropdownToggle value="Select &#x25BE;"/>
                     <div class="dropdown-menu" aria-labelledby="tagUserDropdown">
                         <input type="button" (click)="onUserSelected(user)" *ngFor="let user of unTaggedHouseholdUsers" value="{{ user }}" class="dropdown-item"/>
                     </div>

@@ -9,10 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var session_service_1 = require("../service/session.service");
 var NavComponent = (function () {
-    function NavComponent() {
+    function NavComponent(sessionService) {
+        this.sessionService = sessionService;
         this.isCollapsed = false;
     }
+    NavComponent.prototype.ngOnInit = function () {
+        this.currentUser = this.sessionService.getLoggedInUser();
+        this.currentHousehold = this.sessionService.getCurrentHousehold();
+    };
     return NavComponent;
 }());
 __decorate([
@@ -22,8 +28,10 @@ __decorate([
 NavComponent = __decorate([
     core_1.Component({
         selector: 'household-nav',
-        templateUrl: 'app/template/nav.template.html'
-    })
+        templateUrl: 'app/template/nav.template.html',
+        providers: [session_service_1.SessionService]
+    }),
+    __metadata("design:paramtypes", [session_service_1.SessionService])
 ], NavComponent);
 exports.NavComponent = NavComponent;
 //# sourceMappingURL=nav.component.js.map

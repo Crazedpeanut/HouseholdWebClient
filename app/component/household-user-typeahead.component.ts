@@ -3,7 +3,7 @@
  */
 
 import {Component, Output, EventEmitter, Input} from "@angular/core";
-import {HouseholdService} from "../service/journal.service";
+import {JournalService} from "../service/journal.service";
 import {Observable} from "rxjs";
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
@@ -13,7 +13,7 @@ import {HouseholdUser} from "../model/household-user";
 @Component({
     selector: 'household-user-typeahead',
     templateUrl: 'app/template/household-user-typeahead.template.html',
-    providers: [HouseholdService]
+    providers: [JournalService]
 })
 export class HouseholdUserTypeAheadComponent {
     public model: any;

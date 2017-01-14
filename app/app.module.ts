@@ -18,7 +18,7 @@ import {HouseholdUserTypeAheadComponent} from "./component/household-user-typeah
 import {TitleCasePipe} from "./pipes/title-case.pipe";
 import {HouseholdTaggerUserListComponent} from "./component/household-tagged-user-list.component";
 import {HouseholdTaggedUserComponent} from "./component/household-tagged-user.component";
-import {MessagesComponent} from "./template/messages.component";
+import {MessagesComponent} from "./component/messages.component";
 
 @NgModule({
   imports:      [

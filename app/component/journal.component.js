@@ -36,9 +36,9 @@ JournalComponent = __decorate([
     core_1.Component({
         selector: 'journal',
         templateUrl: 'app/template/journal.template.html',
-        providers: [journal_service_1.HouseholdService]
+        providers: [journal_service_1.JournalService]
     }),
-    __metadata("design:paramtypes", [journal_service_1.HouseholdService, router_1.ActivatedRoute, platform_browser_1.Title])
+    __metadata("design:paramtypes", [journal_service_1.JournalService, router_1.ActivatedRoute, platform_browser_1.Title])
 ], JournalComponent);
 exports.JournalComponent = JournalComponent;
 //# sourceMappingURL=journal.component.js.map
