@@ -10,11 +10,10 @@ import {HouseholdUser} from "../model/household-user";
 })
 export class HouseholdTaggerUserListComponent {
     @Input() taggedUsers: HouseholdUser[];
+    @Output() onDeleteTaggedUser = new EventEmitter<HouseholdUser>();
     @Input() canDelete = false;
 
     handleDeleteButtonClicked(userToDelete: HouseholdUser) {
-        let index = this.taggedUsers.indexOf(userToDelete);
-        this.taggedUsers.splice(index, 1);
-        console.log("Should have deleted user");
+        this.onDeleteTaggedUser.emit(userToDelete);
     }
 }

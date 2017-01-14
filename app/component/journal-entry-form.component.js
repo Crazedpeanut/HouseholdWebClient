@@ -42,6 +42,12 @@ var JournalEntryFormComponent = (function () {
         this.model.entryFormImages.splice(index, 1);
         this.resetFileInput();
     };
+    JournalEntryFormComponent.prototype.onDeleteTaggedUser = function (taggedUser) {
+        var index = this.model.taggedUsers.indexOf(taggedUser);
+        this.model.taggedUsers.splice(index, 1);
+        this.unTaggedHouseholdUsers.push(taggedUser);
+        console.log("Should have deleted user");
+    };
     JournalEntryFormComponent.prototype.onSubmit = function () {
         var _this = this;
         var mapper = new journal_entry_form_to_journal_entry_1.JournalEntryFormToJournalEntry();

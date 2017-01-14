@@ -2,7 +2,7 @@
     <form (ngSubmit)="onSubmit();resetForm()" #journalEntryForm="ngForm">
 
         <div class="form-group">
-            <household-tagged-user-list [canDelete]="canDeleteTaggedUsers" [taggedUsers]="model.taggedUsers"></household-tagged-user-list>
+            <household-tagged-user-list (onDeleteTaggedUser)="onDeleteTaggedUser($event)" [canDelete]="canDeleteTaggedUsers" [taggedUsers]="model.taggedUsers"></household-tagged-user-list>
             <div class="tag-user row">
                 <household-user-typeahead class="col-md-10" [users]="unTaggedHouseholdUsers" (onUserSelected)="onUserSelected($event)"></household-user-typeahead>
                 <div ngbDropdown [autoClose]="false" class="col-md-2">

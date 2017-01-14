@@ -49,6 +49,13 @@ export class JournalEntryFormComponent implements OnInit {
     this.resetFileInput();
   }
 
+  onDeleteTaggedUser(taggedUser: HouseholdUser) {
+    let index = this.model.taggedUsers.indexOf(taggedUser);
+    this.model.taggedUsers.splice(index, 1);
+    this.unTaggedHouseholdUsers.push(taggedUser)
+    console.log("Should have deleted user");
+  }
+
   onSubmit(): void {
     let mapper = new JournalEntryFormToJournalEntry();
     let journalEntry: JournalEntry;
