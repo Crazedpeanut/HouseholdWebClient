@@ -19,6 +19,7 @@ import {TitleCasePipe} from "./pipes/title-case.pipe";
 import {HouseholdTaggerUserListComponent} from "./component/household-tagged-user-list.component";
 import {HouseholdTaggedUserComponent} from "./component/household-tagged-user.component";
 import {MessagesComponent} from "./component/messages.component";
+import {HouseholdUserSummary} from "./component/household-user-summary";
 
 @NgModule({
   imports:      [
@@ -42,7 +43,8 @@ import {MessagesComponent} from "./component/messages.component";
       TitleCasePipe,
       HouseholdTaggerUserListComponent,
       HouseholdTaggedUserComponent,
-      MessagesComponent
+      MessagesComponent,
+      HouseholdUserSummary
   ],
   entryComponents: [
       ImageSelectionContent

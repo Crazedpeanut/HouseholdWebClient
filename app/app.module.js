@@ -25,6 +25,7 @@ var title_case_pipe_1 = require("./pipes/title-case.pipe");
 var household_tagged_user_list_component_1 = require("./component/household-tagged-user-list.component");
 var household_tagged_user_component_1 = require("./component/household-tagged-user.component");
 var messages_component_1 = require("./component/messages.component");
+var household_user_summary_1 = require("./component/household-user-summary");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -53,7 +54,8 @@ AppModule = __decorate([
             title_case_pipe_1.TitleCasePipe,
             household_tagged_user_list_component_1.HouseholdTaggerUserListComponent,
             household_tagged_user_component_1.HouseholdTaggedUserComponent,
-            messages_component_1.MessagesComponent
+            messages_component_1.MessagesComponent,
+            household_user_summary_1.HouseholdUserSummary
         ],
         entryComponents: [
             image_selection_component_1.ImageSelectionContent

@@ -15,6 +15,8 @@ $list-title-text-colour: #000;
 $list-heading-height: 43px;
 $translucent-background: rgba(0, 0, 0, 0.4);
 
+$bs-xs: 486px;
+
 form {
   .form-control:focus {
     border-color: $primary-color;
@@ -164,4 +166,12 @@ household-tagged-user-list {
 
 .navbar-toggler {
   position: relative;
+}
+
+@media(max-width:$bs-xs) {
+  .m-xs-0 {
+    margin: 0;
+    margin-left: 0!important;
+    margin-right: 0!important;
+  }
 }

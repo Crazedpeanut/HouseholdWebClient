@@ -1,20 +1,45 @@
 <nav class="navbar bg-inverse navbar-inverse navbar-toggleable-md">
-    <a class="navbar-brand align-left" routerLink="/dashboard">{{ title }}</a>
+    <div class="container">
+        <div class="row w-100 m-xs-0">
+            <div class="col col-lg-3 col-md-3 col-xl-3 col-sm-3 col-xs-6">
+                <a class="navbar-brand align-left" routerLink="/dashboard">{{ title }}</a>
+            </div>
 
-    <button type="button" [attr.aria-expanded]="!isCollapsed" data-target="#collapsableNavbar" data-toggle="collapse" aria-controls="collapsable-navbar" class="navbar-toggler navbar-toggler-right btn">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="navbar-toggler-icon"></span>
-    </button>
+            <div class="col col-md-1 col-sm-1 hidden-lg-up push-md-8 push-sm-8 col-xs-6">
+                <button type="button"
+                        [attr.aria-expanded]="!isCollapsed"
+                        data-target="#collapsableNavbar"
+                        data-toggle="collapse"
+                        aria-controls="collapsable-navbar"
+                        class="navbar-toggler navbar-toggler-right btn">
 
-    <div id="collapsableNavbar" class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-            <li class="nav-item"><a class="nav-link" [routerLink]='["/journal", 0]' [routerLinkActive]="['is-active']">Journal</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="/messages" [routerLinkActive]="['is-active']">Messages</a></li>
-        </ul>
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="col offset-lg-7 offset-xl-7 offset-md-3 mt-2 offset-sm-1 text-center col-md-3 col-lg-2 col-xl-2 col-sm-5 col-xs-12">
+                <div class="dropdown">
+                    <button id="household-user-dropdown-toggle" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Household/User Dropdown</span>
+                        <h6 class="m-0">{{ currentHousehold.name }}</h6>
+                        <p class="m-0 text-muted">{{ currentUser }}</p>
+                    </button>
+                    <div class="dropdown-menu p-1" aria-labelledby="household-user-dropdown-toggle">
+                        <household-user-summary></household-user-summary>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col col-12">
+                <div id="collapsableNavbar" class="collapse navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" routerLink="/dashboard" [routerLinkActive]="['is-active']">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" [routerLink]='["/journal", 0]' [routerLinkActive]="['is-active']">Journal</a></li>
+                        <li class="nav-item"><a class="nav-link" routerLink="/messages" [routerLinkActive]="['is-active']">Messages</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <button class="btn btn-outline-secondary">
-        <h6 class="m-0">{{ currentHousehold.name }} &#x25BE;</h6>
-        <p class="m-0 text-muted">{{ currentUser }}</p>
-    </button>
 </nav>
