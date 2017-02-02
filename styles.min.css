@@ -46,26 +46,23 @@ form a::after {
 .image-uploads a:hover {
   text-decoration: underline; }
 
-household-tagged-user-list {
+household-user-box {
+  margin-left: 5px;
+  margin-right: 5px;
   display: inline-block; }
-  household-tagged-user-list .tagged-user-list household-tagged-user:first-of-type {
-    margin-left: 0; }
-  household-tagged-user-list .tagged-user-list household-tagged-user {
-    margin-left: 5px;
-    margin-right: 5px;
-    display: inline-block; }
-  household-tagged-user-list .tagged-user-list .tagged-user {
-    float: left;
-    position: relative; }
-    household-tagged-user-list .tagged-user-list .tagged-user .delete-icon {
-      position: absolute;
-      height: 13px;
-      width: 13px;
-      top: 0;
-      right: 0; }
-      household-tagged-user-list .tagged-user-list .tagged-user .delete-icon .delete-icon-cross {
-        height: 100%;
-        padding: 3px; }
+
+household-user-box {
+  float: left;
+  position: relative; }
+  household-user-box .delete-icon {
+    position: absolute;
+    height: 13px;
+    width: 13px;
+    top: 0;
+    right: 0; }
+    household-user-box .delete-icon .delete-icon-cross {
+      height: 100%;
+      padding: 3px; }
 
 .journal-entries .journal-entry {
   margin-top: 5px;

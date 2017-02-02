@@ -95,39 +95,26 @@ form {
   text-decoration: underline;
 }
 
-
-household-tagged-user-list {
-
+household-user-box {
+  margin-left: 5px;
+  margin-right: 5px;
   display: inline-block;
+}
 
-  .tagged-user-list {
+household-user-box {
+  float: left;
+  position: relative;
 
-    household-tagged-user:first-of-type {
-      margin-left: 0;
-    }
+  .delete-icon {
+    position: absolute;
+    height: 13px;
+    width: 13px;
+    top: 0;
+    right: 0;
 
-    household-tagged-user {
-      margin-left: 5px;
-      margin-right: 5px;
-      display: inline-block;
-    }
-
-    .tagged-user {
-      float: left;
-      position: relative;
-
-      .delete-icon {
-        position: absolute;
-        height: 13px;
-        width: 13px;
-        top: 0;
-        right: 0;
-
-        .delete-icon-cross {
-          height: 100%;
-          padding: 3px;
-        }
-      }
+    .delete-icon-cross {
+      height: 100%;
+      padding: 3px;
     }
   }
 }

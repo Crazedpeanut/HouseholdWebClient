@@ -7,9 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var journal_component_1 = require("./component/journal.component");
-var dashboard_component_1 = require("./component/dashboard.component");
-var messages_component_1 = require("./component/messages.component");
+var journal_component_1 = require("../component/journal.component");
+var dashboard_component_1 = require("../component/dashboard.component");
+var messages_component_1 = require("../component/messages.component");
 var routes = [
     {
         path: "",
@@ -29,16 +29,22 @@ var routes = [
         component: messages_component_1.MessagesComponent
     }
 ];
-var AppRoutingModule = (function () {
+var AppRoutingModule = AppRoutingModule_1 = (function () {
     function AppRoutingModule() {
     }
+    AppRoutingModule.forRoot = function () {
+        return {
+            ngModule: AppRoutingModule_1,
+        };
+    };
     return AppRoutingModule;
 }());
-AppRoutingModule = __decorate([
+AppRoutingModule = AppRoutingModule_1 = __decorate([
     core_1.NgModule({
         imports: [router_1.RouterModule.forRoot(routes)],
         exports: [router_1.RouterModule]
     })
 ], AppRoutingModule);
 exports.AppRoutingModule = AppRoutingModule;
+var AppRoutingModule_1;
 //# sourceMappingURL=app-routing.module.js.map

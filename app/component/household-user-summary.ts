@@ -2,8 +2,6 @@
  * Created by john on 14/01/2017.
  */
 import {Component, OnInit} from "@angular/core";
-import {PAGE_TITLE_PREFIX} from "../constants";
-import {Title} from "@angular/platform-browser";
 import {SessionService} from "../service/session.service";
 import {HouseholdUser} from "../model/household-user";
 import {Household} from "../model/household";

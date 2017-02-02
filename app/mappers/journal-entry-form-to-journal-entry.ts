@@ -1,4 +1,4 @@
-import {JournalEntryForm} from "../model/journal-entry-form";
+import {JournalEntryForm} from "../journal-entry-form/model/journal-entry-form";
 import {JournalEntry} from "../model/journal-entry";
 
 export class JournalEntryFormToJournalEntry {

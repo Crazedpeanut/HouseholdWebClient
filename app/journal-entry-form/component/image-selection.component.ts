@@ -1,13 +1,13 @@
 import {Component, Output, EventEmitter} from '@angular/core';
-import {JournalImage} from "../model/journal-image";
+import {JournalImage} from "../../model/journal-image";
 
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'image-select-modal',
-    templateUrl: 'app/template/image-selection.template.html'
+    templateUrl: 'app/journal-entry-form/template/image-selection.template.html'
 })
-export class ImageSelectionContent {
+export class ImageSelectionContentComponent {
 
     @Output() onImagesSelected = new EventEmitter<JournalImage[]>();
     selectedImages: JournalImage [];
@@ -25,5 +25,4 @@ export class ImageSelectionContent {
     imageSelectionComplete() {
         this.onImagesSelected.emit(this.selectedImages);
     }
-
 }

@@ -7,25 +7,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
-var app_routing_module_1 = require("./app-routing.module");
+var app_routing_module_1 = require("./routing/app-routing.module");
 var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var app_component_1 = require("./component/app.component");
 var journal_component_1 = require("./component/journal.component");
 var nav_component_1 = require("./component/nav.component");
-var journal_entry_form_component_1 = require("./component/journal-entry-form.component");
 var journal_entry_list_component_1 = require("./component/journal-entry-list.component");
 var dashboard_component_1 = require("./component/dashboard.component");
-var forms_1 = require("@angular/forms");
 var household_modal_component_1 = require("./component/household-modal.component");
-var image_selection_component_1 = require("./component/image-selection.component");
-var journal_entry_form_images_component_1 = require("./component/journal-entry-form-images.component");
-var journal_entry_form_image_component_1 = require("./component/journal-entry-form-image.component");
-var household_user_typeahead_component_1 = require("./component/household-user-typeahead.component");
+var image_selection_component_1 = require("./journal-entry-form/component/image-selection.component");
 var title_case_pipe_1 = require("./pipes/title-case.pipe");
-var household_tagged_user_list_component_1 = require("./component/household-tagged-user-list.component");
-var household_tagged_user_component_1 = require("./component/household-tagged-user.component");
 var messages_component_1 = require("./component/messages.component");
 var household_user_summary_1 = require("./component/household-user-summary");
+var journal_entry_form_module_1 = require("./journal-entry-form/journal-entry-form.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -34,31 +28,24 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [
-            forms_1.FormsModule,
             platform_browser_1.BrowserModule,
-            app_routing_module_1.AppRoutingModule,
-            ng_bootstrap_1.NgbModule.forRoot()
+            app_routing_module_1.AppRoutingModule.forRoot(),
+            ng_bootstrap_1.NgbModule.forRoot(),
+            journal_entry_form_module_1.JournalEntryFormModule.forRoot()
         ],
         declarations: [
             app_component_1.AppComponent,
             journal_component_1.JournalComponent,
             nav_component_1.NavComponent,
-            journal_entry_form_component_1.JournalEntryFormComponent,
             journal_entry_list_component_1.JournalEntryListComponent,
             dashboard_component_1.DashboardComponent,
             household_modal_component_1.HouseholdModalComponent,
-            image_selection_component_1.ImageSelectionContent,
-            journal_entry_form_images_component_1.JournalEntryFormImagesComponent,
-            journal_entry_form_image_component_1.JournalEntryFormImageComponent,
-            household_user_typeahead_component_1.HouseholdUserTypeAheadComponent,
             title_case_pipe_1.TitleCasePipe,
-            household_tagged_user_list_component_1.HouseholdTaggerUserListComponent,
-            household_tagged_user_component_1.HouseholdTaggedUserComponent,
             messages_component_1.MessagesComponent,
             household_user_summary_1.HouseholdUserSummary
         ],
         entryComponents: [
-            image_selection_component_1.ImageSelectionContent
+            image_selection_component_1.ImageSelectionContentComponent
         ],
         schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA],
         bootstrap: [app_component_1.AppComponent]

@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
+import {NgModule, ModuleWithProviders} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {JournalComponent} from "./component/journal.component";
-import {DashboardComponent} from "./component/dashboard.component";
-import {MessagesComponent} from "./component/messages.component";
+import {JournalComponent} from "../component/journal.component";
+import {DashboardComponent} from "../component/dashboard.component";
+import {MessagesComponent} from "../component/messages.component";
 
 const routes: Routes = [
     {
@@ -25,9 +25,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [ RouterModule.forRoot(routes)],
+    imports: [ RouterModule.forRoot(routes) ],
     exports: [ RouterModule]
 })
 export class AppRoutingModule {
-
+    static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: AppRoutingModule,
+        }
+    }
 }

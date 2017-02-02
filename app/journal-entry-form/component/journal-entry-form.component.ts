@@ -1,18 +1,18 @@
-import {Component, Output, EventEmitter, ViewChild, OnInit} from '@angular/core';
+import {Component, Output, EventEmitter, OnInit} from '@angular/core';
 import {JournalEntryForm} from "../model/journal-entry-form";
-import {JournalService} from "../service/journal.service";
-import {JournalEntryFormToJournalEntry} from "../mappers/journal-entry-form-to-journal-entry";
-import {JournalEntry} from "../model/journal-entry";
-import {JournalImage} from "../model/journal-image";
 import {EntryFormImage} from "../model/entry-form-image";
-import {ThumbnailService} from "../service/thumbnail.service";
-import {HouseholdUser} from "../model/household-user";
-import {UserService} from "../service/user.service";
-import {SessionService} from "../service/session.service";
+import {JournalService} from "../../service/journal.service";
+import {ThumbnailService} from "../../service/thumbnail.service";
+import {SessionService} from "../../service/session.service";
+import {JournalEntry} from "../../model/journal-entry";
+import {HouseholdUser} from "../../model/household-user";
+import {JournalEntryFormToJournalEntry} from "../../mappers/journal-entry-form-to-journal-entry";
+import {JournalImage} from "../../model/journal-image";
+
 
 @Component({
   selector: 'journal-entry-form',
-  templateUrl: 'app/template/journal-entry-form.template.html',
+  templateUrl: 'app/journal-entry-form/template/journal-entry-form.template.html',
   providers: [ JournalService, ThumbnailService, SessionService ]
 })
 export class JournalEntryFormComponent implements OnInit {
@@ -52,7 +52,7 @@ export class JournalEntryFormComponent implements OnInit {
   onDeleteTaggedUser(taggedUser: HouseholdUser) {
     let index = this.model.taggedUsers.indexOf(taggedUser);
     this.model.taggedUsers.splice(index, 1);
-    this.unTaggedHouseholdUsers.push(taggedUser)
+    this.unTaggedHouseholdUsers.push(taggedUser);
     console.log("Should have deleted user");
   }
 

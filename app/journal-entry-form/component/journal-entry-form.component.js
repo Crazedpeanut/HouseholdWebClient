@@ -10,11 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var journal_entry_form_1 = require("../model/journal-entry-form");
-var journal_service_1 = require("../service/journal.service");
-var journal_entry_form_to_journal_entry_1 = require("../mappers/journal-entry-form-to-journal-entry");
 var entry_form_image_1 = require("../model/entry-form-image");
-var thumbnail_service_1 = require("../service/thumbnail.service");
-var session_service_1 = require("../service/session.service");
+var journal_service_1 = require("../../service/journal.service");
+var thumbnail_service_1 = require("../../service/thumbnail.service");
+var session_service_1 = require("../../service/session.service");
+var journal_entry_form_to_journal_entry_1 = require("../../mappers/journal-entry-form-to-journal-entry");
 var JournalEntryFormComponent = (function () {
     function JournalEntryFormComponent(journalService, sessionService, thumbnailService) {
         this.journalService = journalService;
@@ -118,7 +118,7 @@ __decorate([
 JournalEntryFormComponent = __decorate([
     core_1.Component({
         selector: 'journal-entry-form',
-        templateUrl: 'app/template/journal-entry-form.template.html',
+        templateUrl: 'app/journal-entry-form/template/journal-entry-form.template.html',
         providers: [journal_service_1.JournalService, thumbnail_service_1.ThumbnailService, session_service_1.SessionService]
     }),
     __metadata("design:paramtypes", [journal_service_1.JournalService,

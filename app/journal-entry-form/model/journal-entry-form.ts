@@ -1,5 +1,5 @@
 import {EntryFormImage} from "./entry-form-image";
-import {HouseholdUser} from "./household-user";
+import {HouseholdUser} from "../../model/household-user";
 export class JournalEntryForm {
 
     constructor(public title: string = null,

@@ -7,7 +7,7 @@ import {EntryFormImage} from "../model/entry-form-image";
 
 @Component({
     selector: 'journal-entry-form-image',
-    templateUrl: 'app/template/journal-entry-form-image.template.html'
+    templateUrl: 'app/journal-entry-form/template/journal-entry-form-image.template.html'
 })
 export class JournalEntryFormImageComponent{
     @Input() entryFormImage: EntryFormImage;

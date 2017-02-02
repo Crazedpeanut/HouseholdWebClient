@@ -1,3 +1,0 @@
-<div class="tagged-user-list">
-    <p class="d-inline align-bottom">Tagged: <span *ngIf="taggedUsers.length == 0">No one!</span></p><household-tagged-user [canDelete]="canDelete" (onTaggedUserDelete)="handleDeleteButtonClicked($event)" [householdUser]="taggedUser" *ngFor="let taggedUser of taggedUsers"></household-tagged-user>
-</div>

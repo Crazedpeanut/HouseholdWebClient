@@ -1,15 +1,19 @@
 <div class="journal-entry-form-inner">
     <form (ngSubmit)="onSubmit();resetForm()" #journalEntryForm="ngForm">
 
-        <div class="form-group">
-            <household-tagged-user-list (onDeleteTaggedUser)="onDeleteTaggedUser($event)" [canDelete]="canDeleteTaggedUsers" [taggedUsers]="model.taggedUsers"></household-tagged-user-list>
-            <div class="tag-user row">
-                <household-user-typeahead class="col-9" [users]="unTaggedHouseholdUsers" (onUserSelected)="onUserSelected($event)"></household-user-typeahead>
-                <div ngbDropdown [autoClose]="false" class="col-3">
-                    <input type="button" class="btn btn-secondary" id="tagUserDropdown" ngbDropdownToggle value="Select &#x25BE;"/>
-                    <div class="dropdown-menu" aria-labelledby="tagUserDropdown">
-                        <input type="button" (click)="onUserSelected(user)" *ngFor="let user of unTaggedHouseholdUsers" value="{{ user }}" class="dropdown-item"/>
-                    </div>
+        <div class="tagged-users row">
+            <div class="col-12">
+                <household-user-box *ngFor="let user of model.taggedUsers" [canDelete]="true" (onClickEmitter)="onDeleteTaggedUser" [householdUser]="user" >{{ user}}</household-user-box>
+            </div>
+
+        </div>
+
+        <div class="tag-user row">
+            <household-user-typeahead class="col-9" [users]="unTaggedHouseholdUsers" (onUserSelected)="onUserSelected($event)"></household-user-typeahead>
+            <div ngbDropdown [autoClose]="false" class="col-3">
+                <input type="button" class="btn btn-secondary" id="tagUserDropdown" ngbDropdownToggle value="Select &#x25BE;"/>
+                <div class="dropdown-menu" aria-labelledby="tagUserDropdown">
+                    <input type="button" (click)="onUserSelected(user)" *ngFor="let user of unTaggedHouseholdUsers" value="{{ user }}" class="dropdown-item"/>
                 </div>
             </div>
         </div>
